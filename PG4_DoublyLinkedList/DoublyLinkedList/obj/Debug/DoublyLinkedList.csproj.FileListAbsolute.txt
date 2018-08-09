@@ -12,3 +12,13 @@ C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\
 C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.csprojResolveAssemblyReference.cache
 C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.exe
 C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.pdb
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.exe.config
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.exe
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.pdb
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DLL.dll
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DLL.pdb
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.csprojAssemblyReference.cache
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.csproj.CoreCompileInputs.cache
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.csproj.CopyComplete
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.exe
+D:\PG_Project\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.pdb
