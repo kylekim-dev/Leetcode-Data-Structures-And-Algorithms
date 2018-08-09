@@ -1,0 +1,14 @@
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.exe.config
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.exe
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.pdb
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.csprojResolveAssemblyReference.cache
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.exe
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.exe.config
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.exe
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DoublyLinkedList.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DLL.dll
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\bin\Debug\DLL.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.csprojResolveAssemblyReference.cache
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.exe
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DoublyLinkedList\obj\Debug\DoublyLinkedList.pdb

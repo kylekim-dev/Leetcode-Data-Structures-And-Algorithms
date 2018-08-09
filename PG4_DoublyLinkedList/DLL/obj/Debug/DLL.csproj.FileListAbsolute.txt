@@ -1,0 +1,10 @@
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DLL\bin\Debug\DLL.dll
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DLL\bin\Debug\DLL.pdb
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DLL\obj\Debug\DLL.csprojResolveAssemblyReference.cache
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DLL\obj\Debug\DLL.dll
+c:\users\dmk\documents\visual studio 2017\Projects\DoublyLinkedList\DLL\obj\Debug\DLL.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\bin\Debug\DLL.dll
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\bin\Debug\DLL.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.csprojResolveAssemblyReference.cache
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.dll
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.pdb
