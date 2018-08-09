@@ -1,0 +1,10 @@
+D:\PG_Project\PG3_Logger\PG3_Logger\obj\Debug\PG3_Logger.csprojAssemblyReference.cache
+D:\PG_Project\PG3_Logger\PG3_Logger\obj\Debug\PG3_Logger.csproj.CoreCompileInputs.cache
+D:\PG_Project\PG3_Logger\PG3_Logger\bin\Debug\PG3_Logger.exe.config
+D:\PG_Project\PG3_Logger\PG3_Logger\bin\Debug\PG3_Logger.exe
+D:\PG_Project\PG3_Logger\PG3_Logger\bin\Debug\PG3_Logger.pdb
+D:\PG_Project\PG3_Logger\PG3_Logger\bin\Debug\Logging.dll
+D:\PG_Project\PG3_Logger\PG3_Logger\bin\Debug\Logging.pdb
+D:\PG_Project\PG3_Logger\PG3_Logger\obj\Debug\PG3_Logger.csproj.CopyComplete
+D:\PG_Project\PG3_Logger\PG3_Logger\obj\Debug\PG3_Logger.exe
+D:\PG_Project\PG3_Logger\PG3_Logger\obj\Debug\PG3_Logger.pdb
