@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PG4_Stack", "PG4_Stack\PG4_Stack.csproj", "{8C2998B0-2578-4062-A1BF-D74C9B252689}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS", "DS\DS.csproj", "{EFA6DA86-8B87-4E9B-9C96-F59BB09661D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C2998B0-2578-4062-A1BF-D74C9B252689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2998B0-2578-4062-A1BF-D74C9B252689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2998B0-2578-4062-A1BF-D74C9B252689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2998B0-2578-4062-A1BF-D74C9B252689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA6DA86-8B87-4E9B-9C96-F59BB09661D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA6DA86-8B87-4E9B-9C96-F59BB09661D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA6DA86-8B87-4E9B-9C96-F59BB09661D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA6DA86-8B87-4E9B-9C96-F59BB09661D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

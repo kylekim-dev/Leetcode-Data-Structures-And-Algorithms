@@ -1,0 +1,14 @@
+c:\users\dmk\documents\visual studio 2017\Projects\PG4_Stack\PG4_Stack\bin\Debug\PG4_Stack.exe.config
+c:\users\dmk\documents\visual studio 2017\Projects\PG4_Stack\PG4_Stack\bin\Debug\PG4_Stack.exe
+c:\users\dmk\documents\visual studio 2017\Projects\PG4_Stack\PG4_Stack\bin\Debug\PG4_Stack.pdb
+c:\users\dmk\documents\visual studio 2017\Projects\PG4_Stack\PG4_Stack\obj\Debug\PG4_Stack.csprojResolveAssemblyReference.cache
+c:\users\dmk\documents\visual studio 2017\Projects\PG4_Stack\PG4_Stack\obj\Debug\PG4_Stack.exe
+c:\users\dmk\documents\visual studio 2017\Projects\PG4_Stack\PG4_Stack\obj\Debug\PG4_Stack.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\bin\Debug\PG4_Stack.exe.config
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\bin\Debug\PG4_Stack.exe
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\bin\Debug\PG4_Stack.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\bin\Debug\DS.dll
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\bin\Debug\DS.pdb
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\obj\Debug\PG4_Stack.csprojResolveAssemblyReference.cache
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\obj\Debug\PG4_Stack.exe
+C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\PG4_Stack\obj\Debug\PG4_Stack.pdb
