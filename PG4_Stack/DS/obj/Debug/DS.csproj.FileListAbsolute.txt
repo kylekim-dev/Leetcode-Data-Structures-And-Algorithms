@@ -1,5 +1,0 @@
-C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\DS\bin\Debug\DS.dll
-C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\DS\bin\Debug\DS.pdb
-C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\DS\obj\Debug\DS.csprojResolveAssemblyReference.cache
-C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\DS\obj\Debug\DS.dll
-C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_Stack\DS\obj\Debug\DS.pdb

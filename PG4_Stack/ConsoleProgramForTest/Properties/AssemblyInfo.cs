@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PG4_Stack")]
+[assembly: AssemblyTitle("ConsoleProgramForTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PG4_Stack")]
+[assembly: AssemblyProduct("ConsoleProgramForTest")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8c2998b0-2578-4062-a1bf-d74c9b252689")]
+[assembly: Guid("9433fda4-8807-4c4f-a9dc-4cb62df3cc35")]
 
 // Version information for an assembly consists of the following four values:
 //
