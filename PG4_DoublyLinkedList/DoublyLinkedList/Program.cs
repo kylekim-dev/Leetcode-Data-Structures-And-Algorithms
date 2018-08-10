@@ -22,13 +22,11 @@ namespace DoublyLinkedList
             myList.CreateNode(new Node<int>(20));
             myList.CreateNode(new Node<int>(30));
             myList.CreateNode(new Node<int>(40));
-
             myList.PrintAll();
-            Console.WriteLine("------------------------");
+            Console.WriteLine("----------------------------------");
+            myList.RemoveNode(myList.GetNodeAt(3));
+            myList.AppendAfter(myList.GetNodeAt(1), new Node<int>(50));
 
-            var Temp = myList.GetNodeAt(0);
-
-            myList.RemoveNode(myList.GetNodeAt(0));
             myList.PrintAll();
 
         }

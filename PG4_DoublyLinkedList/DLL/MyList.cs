@@ -31,6 +31,37 @@ namespace DLL
             }
         }
 
+        public void AppendAfter(Node<T> aheadNode, Node<T> newNode)
+        {
+            if (IsHeadEmpty())
+            {
+                Head = newNode;
+            }
+            else
+            {
+                Node<T> Current = Head;
+                while (Current != null)
+                {
+                    if(Current == aheadNode)
+                    {
+                        if(Current.NextNode == null)
+                        {
+                            Current.NextNode = newNode;
+                            newNode.PrevNode = Current;
+                        }
+                        else
+                        {
+                            Current.NextNode.PrevNode = newNode;
+                            newNode.NextNode = Current.NextNode;
+                            Current.NextNode = newNode;
+                            newNode.PrevNode = Current;
+                        }
+                    }
+                    Current = Current.NextNode;
+                }
+            }
+        }
+
         public void RemoveNode(Node<T> deleteNode)
         {
             if (!IsHeadEmpty())
@@ -42,12 +73,19 @@ namespace DLL
                 }
                 else
                 {
-                    while (Current.NextNode != null)
+                    while (Current != null)
                     {
                         if (Current == deleteNode)
                         {
-                            Current.PrevNode.NextNode = deleteNode.NextNode;
-                            Current.NextNode.PrevNode = deleteNode.PrevNode;
+                            if (Current.NextNode == null)
+                            {
+                                Current.PrevNode.NextNode = null;
+                            }
+                            else
+                            {
+                                Current.PrevNode.NextNode = deleteNode.NextNode;
+                                Current.NextNode.PrevNode = deleteNode.PrevNode;
+                            }
                         }
 
                         Current = Current.NextNode;
@@ -78,6 +116,25 @@ namespace DLL
             }
 
             return Current;
+        }
+
+        public int GetCount()
+        {
+            if (IsHeadEmpty())
+            {
+                return 0;
+            }
+
+            Node<T> Current = Head;
+            int c = 0;
+
+            while (Current != null)
+            {
+                Current = Current.NextNode;
+                c++;
+            }
+
+            return c;
         }
 
         public void PrintAll()

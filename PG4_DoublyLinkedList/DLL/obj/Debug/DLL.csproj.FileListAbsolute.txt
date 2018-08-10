@@ -8,3 +8,9 @@ C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\
 C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.csprojResolveAssemblyReference.cache
 C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.dll
 C:\Users\DMK\Desktop\Shared Project\PG_Project\CSharpStudy\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.pdb
+D:\PG_Project\PG4_DoublyLinkedList\DLL\bin\Debug\DLL.dll
+D:\PG_Project\PG4_DoublyLinkedList\DLL\bin\Debug\DLL.pdb
+D:\PG_Project\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.csprojAssemblyReference.cache
+D:\PG_Project\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.csproj.CoreCompileInputs.cache
+D:\PG_Project\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.dll
+D:\PG_Project\PG4_DoublyLinkedList\DLL\obj\Debug\DLL.pdb
