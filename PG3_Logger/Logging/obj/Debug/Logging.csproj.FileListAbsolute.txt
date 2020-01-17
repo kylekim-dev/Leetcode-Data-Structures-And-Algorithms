@@ -1,6 +1,0 @@
-D:\PG_Project\PG3_Logger\Logging\bin\Debug\Logging.dll
-D:\PG_Project\PG3_Logger\Logging\bin\Debug\Logging.pdb
-D:\PG_Project\PG3_Logger\Logging\obj\Debug\Logging.csprojAssemblyReference.cache
-D:\PG_Project\PG3_Logger\Logging\obj\Debug\Logging.csproj.CoreCompileInputs.cache
-D:\PG_Project\PG3_Logger\Logging\obj\Debug\Logging.dll
-D:\PG_Project\PG3_Logger\Logging\obj\Debug\Logging.pdb

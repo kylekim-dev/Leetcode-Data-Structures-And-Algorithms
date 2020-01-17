@@ -1,6 +1,0 @@
-D:\PG_Project\PG3_OOP\Shape\bin\Debug\Shape.dll
-D:\PG_Project\PG3_OOP\Shape\bin\Debug\Shape.pdb
-D:\PG_Project\PG3_OOP\Shape\obj\Debug\Shape.csprojAssemblyReference.cache
-D:\PG_Project\PG3_OOP\Shape\obj\Debug\Shape.csproj.CoreCompileInputs.cache
-D:\PG_Project\PG3_OOP\Shape\obj\Debug\Shape.dll
-D:\PG_Project\PG3_OOP\Shape\obj\Debug\Shape.pdb

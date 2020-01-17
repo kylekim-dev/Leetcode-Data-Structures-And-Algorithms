@@ -1,5 +1,0 @@
-D:\PG_Project\PG3_OOP\ShapeLib\bin\Debug\ShapeLib.dll
-D:\PG_Project\PG3_OOP\ShapeLib\bin\Debug\ShapeLib.pdb
-D:\PG_Project\PG3_OOP\ShapeLib\obj\Debug\ShapeLib.csproj.CoreCompileInputs.cache
-D:\PG_Project\PG3_OOP\ShapeLib\obj\Debug\ShapeLib.dll
-D:\PG_Project\PG3_OOP\ShapeLib\obj\Debug\ShapeLib.pdb
