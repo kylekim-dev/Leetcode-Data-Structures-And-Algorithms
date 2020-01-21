@@ -5,9 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Algorithm\" />
-    <Folder Include="Searching\" />
-    <Folder Include="Sorting\" />
+    <Compile Remove="Searching\**" />
+    <Compile Remove="Sorting\**" />
+    <EmbeddedResource Remove="Searching\**" />
+    <EmbeddedResource Remove="Sorting\**" />
+    <None Remove="Searching\**" />
+    <None Remove="Sorting\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Algorithms\Sorting\" />
+    <Folder Include="Algorithms\Searching\" />
+    <Folder Include="DataStructures\NonLinear\" />
   </ItemGroup>
 
 </Project>

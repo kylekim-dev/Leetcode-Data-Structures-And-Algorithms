@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStructure.Array
+namespace DataStructure.DataStructures.Linear
 {
     public class DynamicArray
     {

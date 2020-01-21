@@ -1,4 +1,4 @@
-﻿using DataStructure.Array;
+﻿using DataStructure.DataStructures.Linear;
 using System;
 
 namespace DataStructureTestConsole
@@ -7,7 +7,8 @@ namespace DataStructureTestConsole
     {
         static void Main(string[] args)
         {
-            RunDynamicArray();
+            //RunDynamicArray();
+            RunStackUsingArray();
         }
 
         static void RunDynamicArray()
@@ -21,6 +22,22 @@ namespace DataStructureTestConsole
             for (int i = 0; i < dynamicArray.Count; i++)
             {
                 Console.WriteLine(dynamicArray[i].ToString());
+            }
+        }
+
+        static void RunStackUsingArray() 
+        {
+            StackArray stack = new StackArray(8);
+            // Push data
+            for (int i = 0; i < 7; i++)
+            {
+                stack.Push(i);
+                Console.WriteLine($"Push data: {i}");
+            }
+
+            while (!stack.IsEmpty)
+            {
+                Console.WriteLine($"Pop data: {stack.Pop()}");
             }
         }
     }
