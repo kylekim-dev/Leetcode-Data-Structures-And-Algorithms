@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Algorithms\Sorting\" />
     <Folder Include="Algorithms\Searching\" />
     <Folder Include="DataStructures\NonLinear\" />
   </ItemGroup>

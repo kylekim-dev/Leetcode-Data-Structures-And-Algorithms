@@ -1,4 +1,5 @@
-﻿using DataStructure.DataStructures.Linear;
+﻿using DataStructure.Algorithms.Sorting;
+using DataStructure.DataStructures.Linear;
 using System;
 
 namespace DataStructureTestConsole
@@ -8,7 +9,36 @@ namespace DataStructureTestConsole
         static void Main(string[] args)
         {
             //RunDynamicArray();
-            RunStackUsingArray();
+            //RunStackUsingArray();
+            RunBubbleSort();
+        }
+
+        static void RunBubbleSort()
+        {
+            int[] arr = { 4, 5, 3, 2, 1 };
+            Console.Write($"Origin Arr: ");
+            foreach (var d in arr)
+            {
+                Console.Write($"{d} ");
+            }
+            Console.WriteLine();
+
+            BubbleSort bubbleSort = new BubbleSort();
+
+            bubbleSort.Ascending(arr);
+            Console.Write($"After Ascending: ");
+            foreach (var d in arr)
+            {
+                Console.Write($"{d} ");
+            }
+            Console.WriteLine();
+
+            bubbleSort.Descending(arr);
+            Console.Write($"After Descending: ");
+            foreach (var d in arr)
+            {
+                Console.Write($"{d} ");
+            }
         }
 
         static void RunDynamicArray()

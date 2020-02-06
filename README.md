@@ -11,6 +11,7 @@ Data structures
   - 
 Algorithms
  * Sorting
+   - Bubble Sort
    - 
  * Searching
    - 
