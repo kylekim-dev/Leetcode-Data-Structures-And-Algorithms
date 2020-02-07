@@ -1,6 +1,7 @@
 ﻿using DataStructure.Algorithms.Sorting;
 using DataStructure.DataStructures.Linear;
 using System;
+using System.Diagnostics;
 
 namespace DataStructureTestConsole
 {
@@ -10,35 +11,57 @@ namespace DataStructureTestConsole
         {
             //RunDynamicArray();
             //RunStackUsingArray();
-            RunBubbleSort();
+            RunSort(SortType.Insertion);
         }
 
-        static void RunBubbleSort()
+        static void RunSort(SortType type)
         {
-            int[] arr = { 4, 5, 3, 2, 1 };
-            Console.Write($"Origin Arr: ");
+            ISort sort;
+            switch (type)
+            {
+                case SortType.Bubble:
+                    sort = new BubbleSort();
+                    break;
+                case SortType.Insertion:
+                    sort = new InsertionSort();
+                    break;
+                default:
+                    sort = new InsertionSort();
+                    break;
+            }
+            int[] arr = new int[20000];
+            Random random = new Random();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = random.Next(1, 20000);
+            }
+            
+            Console.Write($"Original: ");
             foreach (var d in arr)
             {
                 Console.Write($"{d} ");
             }
             Console.WriteLine();
+            Console.WriteLine();
 
-            BubbleSort bubbleSort = new BubbleSort();
-
-            bubbleSort.Ascending(arr);
+            Stopwatch stopwatch = new Stopwatch();
             Console.Write($"After Ascending: ");
+            stopwatch.Start();
+            sort.Ascending(arr);
+            stopwatch.Stop();
             foreach (var d in arr)
             {
                 Console.Write($"{d} ");
             }
             Console.WriteLine();
+            Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
 
-            bubbleSort.Descending(arr);
-            Console.Write($"After Descending: ");
-            foreach (var d in arr)
-            {
-                Console.Write($"{d} ");
-            }
+            //Console.Write($"After Descending: ");
+            //sort.Descending(arr);
+            //foreach (var d in arr)
+            //{
+            //    Console.Write($"{d} ");
+            //}
         }
 
         static void RunDynamicArray()
@@ -69,6 +92,12 @@ namespace DataStructureTestConsole
             {
                 Console.WriteLine($"Pop data: {stack.Pop()}");
             }
+        }
+
+        public enum SortType
+        {
+            Bubble,
+            Insertion
         }
     }
 }

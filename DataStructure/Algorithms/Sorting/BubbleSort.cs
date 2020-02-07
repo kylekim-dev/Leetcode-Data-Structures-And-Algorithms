@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructure.Algorithms.Sorting
 {
-    public class BubbleSort
+    public class BubbleSort : ISort
     {
         // Time Complexity O(n^2)
         public void Ascending(int[] arr)
