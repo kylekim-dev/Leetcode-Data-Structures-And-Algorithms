@@ -11,7 +11,7 @@ namespace DataStructureTestConsole
         {
             //RunDynamicArray();
             //RunStackUsingArray();
-            RunSort(SortType.Quick);
+            RunSort(SortType.Selection);
         }
 
         static void RunSort(SortType type)
@@ -25,6 +25,9 @@ namespace DataStructureTestConsole
                 case SortType.Insertion:
                     sort = new InsertionSort();
                     break;
+                case SortType.Selection:
+                    sort = new SelectionSort();
+                    break;
                 case SortType.Quick:
                     sort = new QuickSort();
                     break;
@@ -32,11 +35,12 @@ namespace DataStructureTestConsole
                     sort = new InsertionSort();
                     break;
             }
-            int[] arr = new int[200000];
+
+            int[] arr = new int[2000];
             Random random = new Random();
             for(int i = 0; i < arr.Length; i++)
             {
-                arr[i] = random.Next(1, 200000);
+                arr[i] = random.Next(1, 2000);
             }
             
             Console.Write($"Original: ");
@@ -58,13 +62,6 @@ namespace DataStructureTestConsole
             }
             Console.WriteLine();
             Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
-
-            //Console.Write($"After Descending: ");
-            //sort.Descending(arr);
-            //foreach (var d in arr)
-            //{
-            //    Console.Write($"{d} ");
-            //}
         }
 
         static void RunDynamicArray()
@@ -101,7 +98,8 @@ namespace DataStructureTestConsole
         {
             Bubble,
             Insertion,
-            Quick
+            Selection,
+            Quick,
         }
     }
 }

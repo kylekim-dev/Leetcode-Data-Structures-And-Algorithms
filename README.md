@@ -13,6 +13,7 @@ Algorithms
  * Sorting
    - Bubble Sort
    - Insertion Sort
+   - Selection Sort
    - Quick Sort
  * Searching
    - 
