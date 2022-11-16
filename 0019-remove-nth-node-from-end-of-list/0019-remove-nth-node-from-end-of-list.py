@@ -14,9 +14,11 @@ class Solution:
         
         head = dummy
         
+        # move to prev node
         for i in range(k - n):
             head = head.next
             
+        # remove target node
         if head.next:
             head.next = head.next.next
         
