@@ -8,6 +8,7 @@ class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         stack = [root]
         
+        # O(m)
         def isSame(n1, n2) -> bool:
             if not n1 and not n2:
                 return True
@@ -18,6 +19,7 @@ class Solution:
             
             return isSame(n1.left, n2.left) and isSame(n1.right, n2.right)
 
+        # O(n)
         while stack:
             node = stack.pop()
             
