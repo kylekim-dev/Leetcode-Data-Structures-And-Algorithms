@@ -12,7 +12,6 @@ class Solution:
         if not root:
             return output
         
-        
         # Iterative BFS 
         while q:
             count = len(q)
