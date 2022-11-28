@@ -4,13 +4,15 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
-
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        # BFS
+        # T: O(N)
+        # S: O(M) (M < N)
+        
         if not root:
             return root
-        
+            
         q = [root]
         
         while q:
@@ -22,10 +24,15 @@ class Solution:
             
             if node.left:
                 q.append(node.left)
+            
             if node.right:
                 q.append(node.right)
+                
             
         return root
+        
+        
+        
             
             
 
