@@ -9,10 +9,10 @@ class Solution:
         # BFS
         # T: O(N)
         # S: O(M)
-        levelOrderArray, q = list(), [root]
-        
         if not root:
             return root
+        
+        levelOrderArray, q = list(), [root]
         
         while q:
             nodeCount = len(q)
