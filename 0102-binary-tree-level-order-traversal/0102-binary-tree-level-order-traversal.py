@@ -9,6 +9,7 @@ class Solution:
         # BFS
         # T: O(N)
         # S: O(M)
+        # Time Lap: under 8min
         if not root:
             return root
         
