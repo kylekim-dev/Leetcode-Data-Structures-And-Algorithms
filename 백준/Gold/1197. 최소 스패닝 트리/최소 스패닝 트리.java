@@ -69,9 +69,9 @@ public class Main {
 
             for(int i = 0; i < graph.get(currNode.vertex).size(); i++){
                 Node nextNode = graph.get(currNode.vertex).get(i);
-                /*if(visited[nextNode.vertex] == true){
+                if(visited[nextNode.vertex] == true){
                     continue;
-                }*/
+                }
                 pq.offer(nextNode);
             }
         }
