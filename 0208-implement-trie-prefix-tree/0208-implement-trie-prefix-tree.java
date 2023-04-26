@@ -1,28 +1,61 @@
 class Trie {
-    private HashSet<String> set;
+    class TrieNode {
+        public HashMap<Character, TrieNode> childNodes;
+        public boolean isLast;
+        public TrieNode(){
+            this.childNodes = new HashMap<>();
+            this.isLast = false;
+        }
+    }
 
+    private TrieNode root;
+    
     public Trie() {
-        set = new HashSet<>();
+        root = new TrieNode();
     }
     
     public void insert(String word) {
-        set.add(word);
+        TrieNode node = this.root;
+        
+        for(int i = 0; i < word.length(); i++){
+            node = node.childNodes.computeIfAbsent(word.charAt(i), c -> new TrieNode());
+        }
+        
+        node.isLast = true;
     }
     
     public boolean search(String word) {
-        return set.contains(word);
+        TrieNode node = this.root;
+        char c;
+        
+        for(int i = 0; i < word.length(); i++){
+            c = word.charAt(i);
+            
+            if(!node.childNodes.containsKey(c)){
+                return false;
+            }
+            
+            node = node.childNodes.get(c);
+        }
+        
+        return node.isLast;
     }
     
     public boolean startsWith(String prefix) {
-        for (Iterator<String> it = set.iterator(); it.hasNext(); ) {
-            String key = it.next();
-            
-            if(key.startsWith(prefix)){
-                return true;
-            }
-        } 
+        TrieNode node = this.root;
+        char c;
         
-        return false;
+        for(int i = 0; i < prefix.length(); i++){
+            c = prefix.charAt(i);
+            
+            if(!node.childNodes.containsKey(c)){
+                return false;
+            }
+            
+            node = node.childNodes.get(c);
+        }
+        
+        return true;
     }
 }
 
