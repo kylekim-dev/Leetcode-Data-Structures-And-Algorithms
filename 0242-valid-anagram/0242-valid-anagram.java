@@ -1,22 +1,9 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        if(s.length() != t.length())
-            return false;
-        
-        HashMap<Character, Integer> map = new HashMap<>();
-        
-        for(Character c : s.toCharArray()){
-            map.put(c, map.getOrDefault(c, 0) + 1);
-        }
-        
-        for(Character c : t.toCharArray()){
-            if(map.getOrDefault(c, 0) == 0){
-                return false;
-            }
-            
-            map.put(c, map.get(c) - 1);
-        }
-        
+        int[] alphabet = new int[26];
+        for (int i = 0; i < s.length(); i++) alphabet[s.charAt(i) - 'a'] += 1;
+        for (int i = 0; i < t.length(); i++) alphabet[t.charAt(i) - 'a'] -= 1;
+        for (int i : alphabet) if (i != 0) return false;
         return true;
     }
 }
