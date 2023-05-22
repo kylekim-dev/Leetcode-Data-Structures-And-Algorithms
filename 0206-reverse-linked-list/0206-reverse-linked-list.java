@@ -10,6 +10,20 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
+        // Special case...
+        if (head == null || head.next == null) return head;
+        ListNode res = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return res;     // for keeping last node
+    }
+    
+    
+    /*
+    public ListNode reverseList(ListNode head) {
+        //  Algorithm: Iteration
+        //  Time: O(N)
+        //  Space: O(1)
         ListNode left = null, mid = head, right;
         
         while(mid != null){
@@ -18,6 +32,9 @@ class Solution {
             left = mid;
             mid = right;
         }
+        
         return left;
     }
+
+    */
 }
