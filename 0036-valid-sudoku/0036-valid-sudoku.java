@@ -18,6 +18,8 @@ class Solution {
     
     */
     public boolean isValidSudoku(char[][] board) {
+        // Algorithm: HashMap, HashSet
+        // Time: O(N^2), Space: O(N^2), N = 9
         HashMap<Integer, HashSet<Integer>> row = new HashMap<>();
         HashMap<Integer, HashSet<Integer>> col = new HashMap<>();
         HashMap<Integer, HashSet<Integer>> sq = new HashMap<>();
