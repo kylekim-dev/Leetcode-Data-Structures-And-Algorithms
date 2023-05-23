@@ -6,10 +6,14 @@ class Solution {
         
     */
     public int maxArea(int[] height) {
+        // Algorithm: Two Pointer
+        // Time: O(N), Space: O(1)
+        
         int l = 0, r = height.length - 1;
         int maxArea = 0;
         int x, y;
         
+        // O(N)
         while (l < r){
             x = r - l;
             y = Math.min(height[l], height[r]);
