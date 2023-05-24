@@ -41,6 +41,7 @@ class Solution {
     }
     
     public boolean isPalindrome(ListNode head) {
+        // Algorithm: Recurrsion, Time: O(N), Space: O(1)
         return isPalindrome(head, head);
     }
     
