@@ -19,19 +19,19 @@ class Solution {
     */
     public boolean isPalindrome(ListNode head) {
         // Algorithm: Stack, Time: O(N), Space: O(1)
-        ListNode prev = null;
+        ListNode prev = null, temp = null;
         ListNode slower = head, faster = head;
         
         while(faster != null && faster.next != null){
             faster = faster.next.next;
             
-            ListNode temp = slower.next;
+            temp = slower.next;
             slower.next = prev;
             prev = slower;
             slower = temp;
         }
         
-        if (faster != null) slower = slower.next;
+        if (faster != null) slower = slower.next; // 홀수개일때
         
         while(slower != null){
             if (prev.val != slower.val) return false;
