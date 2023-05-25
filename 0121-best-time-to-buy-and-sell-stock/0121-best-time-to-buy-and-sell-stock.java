@@ -1,5 +1,6 @@
 class Solution {
     public int maxProfit(int[] prices) {
+        // Algorithm: Dynamic Programming, Time: O(N), Space: O(1)
         int maxProfit = 0;
         int prevMaxPrice = prices[0];
         
