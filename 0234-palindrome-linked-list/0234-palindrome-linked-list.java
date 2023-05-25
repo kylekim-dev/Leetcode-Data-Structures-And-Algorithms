@@ -9,61 +9,36 @@
  * }
  */
 class Solution {
-          
-    // 1 2 3 4 5 4 3 2 1
     /*
-        r(1, 1)
-         r(2, 3)
-          r(3, 5)
-           r(4, 3) <<
-            r(5, 1)
+              p c
+        1 2 3 4 5 4 3 2 1
         
-        
-        1 2 2 1
-        
-        r(1, 1)
-         r(2, 2)
-          r(2, null)
+              p c
+        1 2 3 4 4 3 2 1
         
     */
-    
-    ListNode right;
-    
-    public boolean isPalindrome(ListNode left, ListNode faster){
-        if(faster == null || faster.next == null) {
-            right = left;
-            return true;   
-        }
-        
-        boolean temp = isPalindrome(left.next, faster.next.next);
-        if(faster.next.next != null) right = right.next;
-        return temp && left.val == right.val;
-    }
-    
     public boolean isPalindrome(ListNode head) {
-        // Algorithm: Recurrsion, Time: O(N), Space: O(1)
-        return isPalindrome(head, head);
-    }
-    
-    /*public boolean isPalindrome(ListNode head) {
-        // Algorithm: Stack, Time: O(N), Space: O(N)
-        Stack<ListNode> s = new Stack<>();
-        ListNode slower, faster;
-        slower = faster = head;
+        // Algorithm: Stack, Time: O(N), Space: O(1)
+        ListNode prev = null;
+        ListNode slower = head, faster = head;
         
         while(faster != null && faster.next != null){
-            s.push(slower);
-            slower = slower.next;
             faster = faster.next.next;
+            
+            ListNode temp = slower.next;
+            slower.next = prev;
+            prev = slower;
+            slower = temp;
         }
         
-        if(faster != null) s.push(slower);
+        if (faster != null) slower = slower.next;
         
-        while(!s.isEmpty()){
-            if(s.pop().val != slower.val) return false;
+        while(slower != null){
+            if (prev.val != slower.val) return false;
             slower = slower.next;
+            prev = prev.next;
         }
-        
+
         return true;
-    }*/
+    }
 }
