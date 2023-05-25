@@ -4,8 +4,8 @@ class Solution {
         int prevMaxPrice = prices[0];
         
         for(int i = 1; i < prices.length; i++){
-            if(maxProfit < prices[i] - prevMaxPrice) maxProfit = prices[i] - prevMaxPrice;
-            if(prices[i] < prevMaxPrice) prevMaxPrice = prices[i];
+            maxProfit = Math.max(maxProfit, prices[i] - prevMaxPrice);
+            prevMaxPrice = Math.min(prevMaxPrice, prices[i]);
         }
         
         return maxProfit;
