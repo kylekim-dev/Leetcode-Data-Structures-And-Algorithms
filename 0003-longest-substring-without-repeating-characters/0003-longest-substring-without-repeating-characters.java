@@ -1,5 +1,7 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
+        // Algorithm: Two Pointer, HashSet
+        // Time: O(N), Space: O(N)
         int longest = 0;
         int l = 0, r = 0;
         HashSet<Integer> set = new HashSet<>();
