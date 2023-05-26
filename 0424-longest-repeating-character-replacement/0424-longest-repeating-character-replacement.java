@@ -16,29 +16,30 @@ class Solution {
     */
     public int characterReplacement(String s, int k) {
         int[] freq = new int[26];
-        int maxF = 0;
-        int l, r, lKey, rKey;
-        int output = 0;
-
+        int l = 0, r = 0;
+        int lKey, rKey, len;
+        int most = 0, maxFreq = 0;
+        
         l = r = 0;
 
         while (r < s.length()){
             lKey = s.charAt(r) - 'A';
             freq[lKey] += 1;
-            maxF = Math.max(maxF, freq[lKey]);
+            most = Math.max(most, freq[lKey]);
+            len = r - l + 1;
 
-            if((r - l + 1) - maxF > k){
+            if(len - most > k){
                 rKey = s.charAt(l) - 'A';
                 freq[rKey] -= 1;
                 freq[lKey] -= 1;
                 l += 1;
             }
             else {
-                output = Math.max(output, (r - l + 1));
+                maxFreq = Math.max(maxFreq, len);
                 r += 1;
             }
         }
 
-        return output;
+        return maxFreq;
     }
 }
