@@ -23,9 +23,7 @@ class Solution {
         ListNode dummy = new ListNode();
         ListNode node = dummy;
         
-        for(ListNode n : lists){
-            if(n != null) pq.offer(n);
-        }
+        for(ListNode n : lists) if(n != null) pq.offer(n);
         
         while(!pq.isEmpty()){
             ListNode curr = pq.poll();
