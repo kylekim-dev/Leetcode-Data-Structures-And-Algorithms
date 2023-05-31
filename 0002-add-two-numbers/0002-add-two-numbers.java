@@ -13,10 +13,11 @@ class Solution {
         // Algorithm: Linked List
         // Time: O(N), Space: O(1)
         /*
-            9,9,9,9,9,9,9>1
+            9,9,9,9,9,9,9
             9,9,9,9,
+            
         */
-        ListNode dummy = new ListNode(-1, l1);
+        ListNode head = l1;
         int carry = 0;
         
         while(l1 != null || l2 != null){
@@ -37,6 +38,6 @@ class Solution {
             if(l2 != null) l2 = l2.next;
         }
         
-        return dummy.next;
+        return head;
     }
 }
