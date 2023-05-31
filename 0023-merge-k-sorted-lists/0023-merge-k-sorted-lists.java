@@ -29,7 +29,7 @@ class Solution {
         
         while(!pq.isEmpty()){
             ListNode curr = pq.poll();
-            node.next = new ListNode(curr.val);
+            node.next = curr;
             node = node.next;
             
             if(curr.next != null) pq.offer(curr.next);
