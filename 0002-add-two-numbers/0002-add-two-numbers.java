@@ -10,9 +10,11 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        // Algorithm: Linked List
+        // Time: O(N), Space: O(1)
         /*
             9,9,9,9,9,9,9
-            9,9,9,9
+            9,9,9,9,
         */
         ListNode dummy = new ListNode(-1, l1);
         int carry = 0;
