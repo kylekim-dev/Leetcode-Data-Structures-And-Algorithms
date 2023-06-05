@@ -31,19 +31,18 @@ class Solution {
     */
     
     TreeNode prev;
+    boolean isValid = true;
 
     public boolean isValidBST(TreeNode root) {
         // Algorithm: Recursion and Inorder
         // Time: O(N), Space: O(1)
         if(root == null) return true;
         
-        boolean a = isValidBST(root.left);
+        isValid = isValid && isValidBST(root.left);
         
         if(prev != null && prev.val >= root.val) return false;
         else prev = root;
         
-        a = a && isValidBST(root.right);
-        
-        return a;
+        return isValid && isValidBST(root.right);
     }
 }
