@@ -23,6 +23,8 @@ class Solution {
     }
     
     public boolean isSymmetric(TreeNode root) {
+        // Algorithm:  DFS, Recursion
+        // Time: O(N), Space: O(N)
         return isSymmetric(root.left, root.right);
     }
 }
