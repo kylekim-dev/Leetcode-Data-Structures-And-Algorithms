@@ -16,8 +16,7 @@
 class Solution {
     private boolean isSymmetric(TreeNode a, TreeNode b){
         if(a == null && b == null) return true;
-        else if (a == null && b != null) return false;
-        else if (a != null && b == null) return false;
+        else if (a == null || b == null) return false;
         
         return a.val == b.val && isSymmetric(a.left, b.right) && isSymmetric(a.right, b.left);
     }
