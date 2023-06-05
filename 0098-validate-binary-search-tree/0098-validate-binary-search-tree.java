@@ -15,19 +15,13 @@
  */
 class Solution {
     /*
-        Edge Case:
-        root = [100, 30, 150, null, null, 80, 200]
-                100
-               /   \
-              30   150
-                  /  \  
-                 80  200
-    
-            5
-            
-         4     6
-         
-             3    7
+        Edge Case1:
+        root = [5, 4, 6, null, null, 3, 7]
+                5
+              /  \
+             4    6
+                 / \
+                3   7
     */
     
     TreeNode prev;
@@ -35,7 +29,7 @@ class Solution {
 
     public boolean isValidBST(TreeNode root) {
         // Algorithm: Recursion and Inorder
-        // Time: O(N), Space: O(1)
+        // Time: O(N), Space: O(N)
         if(root == null) return true;
         
         isValid = isValid && isValidBST(root.left);
