@@ -41,6 +41,8 @@ class Solution {
     }
     
     public void recoverTree(TreeNode root) {
+        // Algorithm: Inorder-Traversal, Reccursion
+        // Time: O(N), Space: O(N) [Stack]
         inorder(root);
         
         int temp = n1.val;
