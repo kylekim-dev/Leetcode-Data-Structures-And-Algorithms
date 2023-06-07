@@ -15,6 +15,9 @@
  */
 class Solution {
     public boolean hasPathSum(TreeNode root, int targetSum) {
+        // Algorithm: DFS, Reccursion
+        // Time: O(N), Space: O(N)
+        
         if(root == null) return false;
         if(root.left == null && root.right == null && targetSum - root.val == 0) return true;
         
