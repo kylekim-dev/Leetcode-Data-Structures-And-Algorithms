@@ -14,14 +14,6 @@
  * }
  */
 class Solution {
-    /*
-        f(1)
-         f(-2) > f(3) > 3
-          f(1)      0   
-           f(-1)    -1
-    
-    */
-    
     int max = Integer.MIN_VALUE;
     
     public int postOrder(TreeNode root){
@@ -39,6 +31,8 @@ class Solution {
     }
     
     public int maxPathSum(TreeNode root) {
+        // Algorithm: PostOrder, Recursion
+        // Time: O(N), O(N)
         postOrder(root);
         return max;
     }
