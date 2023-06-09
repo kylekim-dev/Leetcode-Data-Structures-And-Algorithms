@@ -22,6 +22,8 @@ class Solution {
     }
     
     public int maxDepth(TreeNode root) {
+        // Algorithm: DFS, Recursion 
+        // Time: O(N) Space: O(N)
         return maxDepth(root, 0);
     }
 }
