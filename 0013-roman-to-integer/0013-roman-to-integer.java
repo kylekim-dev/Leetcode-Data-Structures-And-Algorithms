@@ -23,20 +23,21 @@ class Solution {
         // Algorithm: Hash Table & Iterator
         // Time: O(N), Space: O(1)
         int num = 0, prev = 0;
-        HashMap<Character, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
+        int[] map = new int[26];
+        Character A = 'A';
+        map['I' - A] = 1;
+        map['V' - A] = 5;
+        map['X' - A] = 10;
+        map['L' - A] = 50;
+        map['C' - A] = 100;
+        map['D' - A] = 500;
+        map['M' - A] = 1000;
         
-        for(Character c : s.toCharArray()){
-            if(map.get(c) > prev) num -= prev;
+        for(Character curr : s.toCharArray()){
+            if(map[curr - A] > prev) num -= prev;
             else num += prev;
             
-            prev = map.get(c);
+            prev = map[curr - A];
         }
         
         return num + prev;
