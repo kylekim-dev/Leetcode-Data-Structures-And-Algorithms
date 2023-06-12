@@ -20,6 +20,8 @@ class Solution {
     */
     
     public int romanToInt(String s) {
+        // Algorithm: Hash Table & Iterator
+        // Time: O(N), Space: O(1)
         int num = 0, prev = 0;
         HashMap<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
