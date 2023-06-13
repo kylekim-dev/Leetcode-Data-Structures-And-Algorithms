@@ -15,6 +15,9 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
+        // Algorithm: Inorder Traversal && Iterator
+        // Time: O(N), Space: O(N)
+        
         Stack<TreeNode> stack = new Stack<>();
         List<Integer> nums = new ArrayList<>();
         if(root != null)
