@@ -1,26 +1,24 @@
 class KthLargest {
-    Queue<Integer> min = new PriorityQueue<Integer>();
+    /*
+        ["KthLargest","add","add","add","add","add"]
+        [[1,[]],[-3],[-2],[-4],[0],[4]]
+        
+        
+    */
+    PriorityQueue<Integer> heap = new PriorityQueue<>();
     int k;
+    
     public KthLargest(int k, int[] nums) {
-        for(int n : nums){
-            min.add(n);
-        }
-        
-        while(min.size() > k){
-            min.poll();
-        }
-        
         this.k = k;
+        for (int num : nums) heap.add(num);
+        while(heap.size() > k) heap.poll();
     }
     
     public int add(int val) {
-        min.add(val);
+        if(heap.size() < k || heap.peek() <= val) heap.add(val);
+        if(heap.size() > k) heap.poll();
         
-        if(min.size() > k){
-            min.poll();   
-        }
-        
-        return min.peek();
+        return heap.peek();
     }
 }
 
