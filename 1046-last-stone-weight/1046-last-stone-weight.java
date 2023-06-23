@@ -8,10 +8,12 @@ class Solution {
         2 1 1 1
         1 1 1
         1
-        
     
     */
     public int lastStoneWeight(int[] stones) {
+        // Algorithm & DS: Max Heap
+        // Time: O(N * LogN), Space: O(N)
+        
         PriorityQueue<Integer> heap = new PriorityQueue<>((o1, o2) -> o2.compareTo(o1));
         
         for(int stone : stones) heap.add(stone);
