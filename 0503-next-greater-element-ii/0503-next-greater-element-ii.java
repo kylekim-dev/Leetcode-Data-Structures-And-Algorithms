@@ -2,16 +2,8 @@ class Solution {
     /*
         [3,1,2,1,4,1]
         
-        [1 2 3 4] NLogN
-        
-        binary search
-        [4,2,4,4,-1,4] NLogN
-        
-        [4,2,4,4,-1,4]
-        
-        
     */
-    
+    /*
     // Brute-force
     // O(N^2) O(N)
     public int[] nextGreaterElements(int[] nums) {
@@ -28,6 +20,29 @@ class Solution {
             }
             
             output[i] = nextGreater;
+        }
+        
+        return output;
+    }*/
+    /*
+        [3,1,2,1,4,1]
+        [4,2,4,4,-1,3]
+    */
+    // Monotonic Stack
+    // O(N) O(N)
+    public int[] nextGreaterElements(int[] nums) {
+        int[] output = new int[nums.length];
+        Stack<Integer> s = new Stack<>();
+        
+        for(int c = 0; c < 2; c++){
+            for(int i = nums.length - 1; i >=0; i--){
+                while(!s.isEmpty() && s.peek() <= nums[i]){
+                    s.pop();
+                } 
+
+                output[i] = s.isEmpty() ? -1 : s.peek();
+                s.push(nums[i]);
+            }
         }
         
         return output;
