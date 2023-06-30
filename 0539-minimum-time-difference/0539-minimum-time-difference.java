@@ -1,35 +1,29 @@
 class Solution {
     /*
-    
-           23:01, 00:00, 01:00 => 59
-           
-           
-           오른쪽으로 돌렸을때 비교
-           왼쪽으로 돌렸을때 비교
-           
-           23:50 => 60 * 23 + 50 = 00:10 
-           00:00 => 60 * 0 + 00  //
-           2:10 => 60 * 2 + 10   //2:20
-           
-           
-           23:50 - 2:10 = (60*23 + 50) - (60*2 + 10) =  1430 - 130 = 1300
-           
-           24:00 - 2:20
-           
-           26 % 24, 40 % 60 = 2:20
-           
-           
-           
-           0 1 2 3 ... 720 ... 1440
-           
-           
-           300
-           
-           파이의 총 넓이 1440
-           
-           Math.min(sizeA, 1440 - sizeA)
+        total minutes = hour * 60 + minutes
+        00:00 = 0
+        00:01 = 1
+        01:01 = 61
+        ...
+        23:59 = 1439
+        
+        
+            0
+            
+        18      6
+        
+            12
+            
+            
+        diff[i] = Math.min(시계 방향순으로 차이, 시계 반대반향으로 차이)
+            
+        output = Math.min(diff[0], diff[1], ... diff[i])
+                 
     */
     public int findMinDifference(List<String> timePoints) {
+        // Algorithm: Math & Sort
+        // Time: O(NLogN), Space: O(N)
+        
         int output = Integer.MAX_VALUE;
         int[] timeTable = new int[timePoints.size()];
         
