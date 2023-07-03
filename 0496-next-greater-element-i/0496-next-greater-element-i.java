@@ -1,8 +1,33 @@
 class Solution {
     /*
-        배열안에 있는 몇몇의 x 요소의 다음 더 큰 요소는 첫번째로 
+        
+        
+        // Algorithm: Monotonic-Stack
+        // Time: O(N), Space: O(N)
+        
+        [4,3,9]
+        [1,5,4,3,2,9]
     */
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int[] ans = new int[nums1.length];
+        Stack<Integer> stack = new Stack<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        for(int j = 0; j < nums2.length; j++){
+            while(!stack.isEmpty() && stack.peek() < nums2[j])
+                map.put(stack.pop(), nums2[j]);
+            
+            stack.push(nums2[j]);
+        }
+
+        for(int i = 0; i < nums1.length; i++){
+            ans[i] = map.getOrDefault(nums1[i], -1);
+        }
+        
+        return ans;
+    }
     
+    /*
     // Algorithm: Brute-Force 
     // Time: O(N*M), Space: O(N)
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
@@ -22,6 +47,5 @@ class Solution {
         }
         
         return ans;
-        
-    }
+    }*/
 }
