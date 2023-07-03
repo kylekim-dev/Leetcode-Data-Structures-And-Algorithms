@@ -4,8 +4,7 @@ class Solution {
         Time: O(N), Space: O(N)
     */
     public int[] finalPrices(int[] prices) {
-        Stack<Integer> stack = new Stack<>();
-        
+        Deque<Integer> stack = new ArrayDeque<>();
         for (int i = 0; i < prices.length; i++) {
             while (!stack.isEmpty() && prices[i] <= prices[stack.peek()]) {
                 prices[stack.pop()] -= prices[i];
