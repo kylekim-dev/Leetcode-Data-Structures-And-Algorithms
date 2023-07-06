@@ -1,45 +1,20 @@
 class Solution {
-    /*
-        [3,1,2,1,4,1]
-        
-    */
-    /*
-    // Brute-force
-    // O(N^2) O(N)
-    public int[] nextGreaterElements(int[] nums) {
-        int[] output = new int[nums.length];
-        
-        for(int i = 0; i < nums.length; i++){
-            int nextGreater = -1;
-            
-            for(int j = 0; j < nums.length; j++){
-                if(nums[i] < nums[(i + j) % nums.length]){
-                    nextGreater = nums[(i + j) % nums.length];
-                    break;
-                }
-            }
-            
-            output[i] = nextGreater;
-        }
-        
-        return output;
-    }*/
-    /*
-        [3,1,2,1,4,1]
-        [4,2,4,4,-1,3]
-    */
-    // Algorithm: Monotonic Stack
+    // Algorithm: Monotonic Stack (Backward)
     // Time: O(N), Space: O(N)
     public int[] nextGreaterElements(int[] nums) {
-        int[] output = new int[nums.length];
-        Stack<Integer> s = new Stack<>();
+        int n = nums.length;
+        int[] output = new int[n];
+        Stack<Integer> stack = new Stack<>();
         
         for(int c = 0; c < 2; c++){
-            for(int i = nums.length - 1; i >=0; i--){
-                while(!s.isEmpty() && s.peek() <= nums[i]) s.pop();
-
-                output[i] = s.isEmpty() ? -1 : s.peek();
-                s.push(nums[i]);
+            for(int i = n - 1; i >=0; i--){
+                while(!stack.isEmpty() && nums[stack.peek()] <= nums[i])
+                    stack.pop();
+                
+                if(stack.isEmpty()) output[i] = -1;
+                else output[i] = nums[stack.peek()];
+                
+                stack.push(i % n);
             }
         }
         
