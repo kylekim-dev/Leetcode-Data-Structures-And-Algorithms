@@ -13,9 +13,10 @@ class Solution {
             int target = num + difference; 
             int count = map.getOrDefault(num, 0) + 1;
 
-            if(count > map.getOrDefault(target, 0)) map.put(target, count);
-            
-            max = Math.max(max, map.get(target));
+            if(count > map.getOrDefault(target, 0)) {
+                map.put(target, count);
+                max = Math.max(max, count);
+            }
         }
         
         return max;
