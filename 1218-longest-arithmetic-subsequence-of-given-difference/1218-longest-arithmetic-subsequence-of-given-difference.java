@@ -1,9 +1,7 @@
 class Solution {
     /*
-        arr = [1,5,7,8,5,3,4,2,1], difference = -2
-        
-        
-    
+        Algorithm & DS: HashMap
+        Time: O(N), Space: O(N)
     */
     public int longestSubsequence(int[] arr, int difference) {
         HashMap<Integer, Integer> map = new HashMap<>();
