@@ -15,7 +15,6 @@
  */
 class BSTIterator {
     /*
-        
         Algorithm: Inorder Traversal with Iterator
         Time: O(N), Space: O(H)
     */
