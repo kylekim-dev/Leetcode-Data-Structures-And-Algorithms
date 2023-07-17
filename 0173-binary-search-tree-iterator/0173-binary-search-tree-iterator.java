@@ -15,29 +15,34 @@
  */
 class BSTIterator {
     /*
-        3 7 9 15 20
-    */
-    Queue<Integer> q = new LinkedList<>();
-    
-    private void inorder(TreeNode node){
-        if(node == null) return;
         
-        inorder(node.left);
-        q.offer(node.val);
-        inorder(node.right);
-    }
-    
+        Algorithm: Inorder Traversal with Iterator
+        Time: O(N), Space: O(H)
+    */
+    Stack<TreeNode> stack = new Stack<>();
 
     public BSTIterator(TreeNode root) {
-        inorder(root);
+        TreeNode node = root;
+        while(node != null){
+            stack.push(node);
+            node = node.left;
+        }
     }
     
     public int next() {
-        return q.poll();
+        TreeNode node = stack.pop();
+        TreeNode curr = node.right;
+        
+        while(curr != null){
+            stack.push(curr);
+            curr = curr.left;
+        }
+        
+        return node.val;
     }
     
     public boolean hasNext() {
-        return !q.isEmpty();
+        return !stack.isEmpty();
     }
 }
 
