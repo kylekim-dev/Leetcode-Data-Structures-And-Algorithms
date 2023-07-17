@@ -10,15 +10,8 @@
  */
 class Solution {
     /*
-        7 2 4 3
-        5 6 4
-        
-        3 4 7 0
-        4 6 0 1
-        
-        curr
-        
-        0 7
+        Alogrithm & DS: Stack
+        Time: O(N), Space: O(N)
     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         Stack<Integer> s1 = new Stack<Integer>();
