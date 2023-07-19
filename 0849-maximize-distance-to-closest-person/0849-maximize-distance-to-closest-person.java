@@ -1,9 +1,11 @@
 class Solution {
     /*
-         0 1 2 3 0 1 0
-         0 3 2 1 0 1 0
-        [1,0,0,0,1,0,1]
+         left:      0 1 2 3 0 1 0
+         right:     0 3 2 1 0 1 0
+         origin:    [1,0,0,0,1,0,1]
     
+        Algorithm: Greedy
+        Time: O(N), Space: O(N)
     */
     public int maxDistToClosest(int[] seats) {
         int n = seats.length;
