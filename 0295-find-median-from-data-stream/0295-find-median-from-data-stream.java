@@ -41,12 +41,7 @@ class MedianFinder {
     }
     
     public double findMedian() {
-        if(isEven){
-            return (ascendingQueue.peek() + descendingQueue.peek()) / 2;
-        }
-        else {
-            return descendingQueue.peek();
-        }
+        return isEven ? (ascendingQueue.peek() + descendingQueue.peek()) / 2 : descendingQueue.peek();
     }
 }
 
