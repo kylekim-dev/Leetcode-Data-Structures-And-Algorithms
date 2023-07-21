@@ -1,22 +1,7 @@
 class MedianFinder {
     /*
-        문제: 여태까지 들어온 숫자들의 중위 값을 구하라
-        
-        오름차순 우선순위 큐
-        내림차순 우선순위 큐
-        
-        even이면 Peek of (Incresending Queue + Peek of Decresending Queue) / 2
-        odd면 Peek of Increasing Queue ??
-        
-        
-        in q: 2
-        de q: 10 1
-        
-        1: f, inQ.poll() = 1
-        2: t, deQ + inQ / 2 = 1.5
-        3. f, 
-            
-        
+        Algorithm & DS: Priority Queue
+        Time: O(LogN), Space: O(N)
     */
     
     private PriorityQueue<Double> ascendingQueue = new PriorityQueue<>();
