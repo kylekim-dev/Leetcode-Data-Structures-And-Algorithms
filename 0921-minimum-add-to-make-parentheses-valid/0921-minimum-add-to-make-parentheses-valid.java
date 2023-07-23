@@ -7,11 +7,8 @@ class Solution {
         int output = 0, openerCount = 0;
         
         for(Character c : s.toCharArray()){
-            if (c == '(') openerCount++;
-            else {
-                if (openerCount == 0) output++;
-                else openerCount--;
-            }
+            if(c == ')' && openerCount == 0) output++;
+            else openerCount += (c == '(') ? 1 : -1;
         }
         
         return output + openerCount;
