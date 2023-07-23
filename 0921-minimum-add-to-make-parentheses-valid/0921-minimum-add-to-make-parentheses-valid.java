@@ -1,22 +1,19 @@
 class Solution {
     /*
-        Algorithm & DS: Stack
-        Time: O(N), Space: O(N)
+        Algorithm & DS: Iterator
+        Time: O(N), Space: O(1)
     */
     public int minAddToMakeValid(String s) {
-        int output = 0;
-        Stack<Character> stack = new Stack<>();
+        int output = 0, openerCount = 0;
         
         for(Character c : s.toCharArray()){
-            if(c == '(') stack.push(c);
+            if (c == '(') openerCount++;
             else {
-                if(stack.isEmpty()) output++;
-                else stack.pop();
+                if (openerCount == 0) output++;
+                else openerCount--;
             }
         }
         
-        output += stack.size();
-        
-        return output;
+        return output + openerCount;
     }
 }
