@@ -1,6 +1,5 @@
 class Solution {
     /*
-    
         Algorithm & DS: Stack
         Time: O(N), Space: O(N)
     */
