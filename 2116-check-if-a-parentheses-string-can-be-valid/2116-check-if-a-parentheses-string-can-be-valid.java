@@ -7,10 +7,12 @@ class Solution {
         int open = 0, openAndWild = 0;
         
         for(int i = 0; i < s.length(); i++){
-            char c = locked.charAt(i) == '0' ? '*' : s.charAt(i);
-
-            open += c == '(' ? 1 : -1;
-            openAndWild += c != ')' ? 1 : -1;
+            if(locked.charAt(i) == '1' && s.charAt(i) == '(') open++;
+            else open--;
+            
+            if(locked.charAt(i) == '0' || s.charAt(i) == '(') openAndWild++;
+            else openAndWild--;
+            
             if (openAndWild < 0) break;
             open = Math.max(open, 0);
         }
