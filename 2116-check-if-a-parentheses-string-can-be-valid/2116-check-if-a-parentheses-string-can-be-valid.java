@@ -1,27 +1,20 @@
 class Solution {
     /*
-         *****
-         01234567890123456789012345678901
-        "((()(()()))()((()()))))()((()(()"
-        "10111100100101001110100010001001"
-        
-        o: 1 1 2 1 
-        w: 1 1 1 1
-        
-        
+        Algorithm & DS: Greedy
+        Time: O(N), Space: O(1)
     */
     public boolean canBeValid(String s, String locked) {
-        int lo = 0, hi = 0;
+        int open = 0, openAndWild = 0;
         
         for(int i = 0; i < s.length(); i++){
             char c = locked.charAt(i) == '0' ? '*' : s.charAt(i);
 
-            lo += c == '(' ? 1 : -1;
-            hi += c != ')' ? 1 : -1;
-            if (hi < 0) break;
-            lo = Math.max(lo, 0);
+            open += c == '(' ? 1 : -1;
+            openAndWild += c != ')' ? 1 : -1;
+            if (openAndWild < 0) break;
+            open = Math.max(open, 0);
         }
         
-        return lo == 0 && hi % 2 == 0;
+        return open == 0 && openAndWild % 2 == 0;
     }
 }
