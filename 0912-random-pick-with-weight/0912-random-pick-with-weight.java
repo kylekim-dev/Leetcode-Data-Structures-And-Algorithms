@@ -17,12 +17,12 @@ class Solution {
     public int pickIndex() {
         int target = random.nextInt(total) + 1;
         int l = 0, r = range.length - 1;
-        int pickNumber = 0;
+        int m = 0;
 
         while(l < r){
-            pickNumber = (r + l) / 2;
-            if(range[pickNumber] < target) l = pickNumber + 1;
-            else r = pickNumber;
+            m = (r + l) / 2;
+            if(range[m] < target) l = m + 1;
+            else r = m;
         }
 
         return l;
