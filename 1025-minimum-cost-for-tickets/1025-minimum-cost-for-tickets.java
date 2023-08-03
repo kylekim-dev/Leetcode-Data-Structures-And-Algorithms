@@ -10,17 +10,16 @@ class Solution {
 
         for(int i = 1; i < dp.length; i++){
             dp[i] = dp[i - 1];
+            // 방문 일정에 포함된 날인가?
             if(i == days[dayIdx]){
-                int cost = dp[i] + costs[0];
-                cost = Math.min(cost, dp[Math.max(i - 7, 0)] + costs[1]);
-                cost = Math.min(cost, dp[Math.max(i - 30, 0)] + costs[2]);
+                int cost = dp[i] + costs[0]; // 1day-pass cost
+                cost = Math.min(cost, dp[Math.max(i - 7, 0)] + costs[1]); // 7days-pass cost
+                cost = Math.min(cost, dp[Math.max(i - 30, 0)] + costs[2]); // 30days-pass cost
 
                 dp[i] = cost;
                 dayIdx++;
             }
         }
-
-        System.out.println(Arrays.toString(dp));
 
         return dp[dp.length - 1];        
     }
