@@ -1,6 +1,6 @@
 class Solution {
     /*
-        Algorithm & DS: Dijkstra & BFS
+        Algorithm & DS: Dijkstra & BFS & Max Heap
         Time: O(E * Log V), Space: O(V)
     */
     public double maxProbability(int n, int[][] edges, double[] succProb, int start_node, int end_node) {
@@ -29,19 +29,17 @@ class Solution {
             adj.add(Map.entry(a, weight));
         }
 
-        // 무한대로 초기화
-        Arrays.fill(dijkstra, INF);
-        dijkstra[start_node] = 0;
-        pq.offer(Map.entry(start_node, dijkstra[start_node]));
+        
+        Arrays.fill(dijkstra, INF); // 다익스트라 배열 초기화
+        dijkstra[start_node] = 0;   // 시작노드 가중치 0으로 초기화
+        pq.offer(Map.entry(start_node, dijkstra[start_node])); // 우선순위 큐에 시작노드 입력
 
         while(!pq.isEmpty()){
             Map.Entry<Integer, Double> node = pq.poll();
             int curr = node.getKey();
-            //double currWeight = node.getValue();
 
-            if(visitied[node.getKey()]){
-                continue;
-            }
+            // 방문한 노드였으면 스킵
+            if(visitied[node.getKey()]) continue;
             visitied[node.getKey()] = true;
 
             for(int i = 0; i < adjs.get(curr).size(); i++){
@@ -49,8 +47,12 @@ class Solution {
                 int next = adj.getKey();
                 double nextWeight = adj.getValue();
 
+                // 선이 연결 안된상태, 즉 가중치가 0 이하 인경우에 현재 다익스트라 가중치를 1로 초기화
+                // 두 수를 곱하기 때문에 -1 or 0을 곱하면 0 이하의 값으로 초기화되는 문제 방지
                 double cost = dijkstra[curr] <= 0 ? 1 * nextWeight : dijkstra[curr] * nextWeight;
 
+                // 해당 경로가 기존 경로보다 더 높은 가중치를 가지면 다익스트라 테이블을 갱신해주고
+                // 우선순위 큐에 해당 경로를 저장함.
                 if(dijkstra[next] != 0 && cost > dijkstra[next]){
                     dijkstra[next] = cost;
                     pq.offer(Map.entry(next, cost));
