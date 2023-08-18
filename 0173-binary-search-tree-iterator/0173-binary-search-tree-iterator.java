@@ -14,35 +14,31 @@
  * }
  */
 class BSTIterator {
-    /*
-        Algorithm: Inorder Traversal with Iterator
-        Time: O(M) for next, hasNext, Space: O(h)
-    */
     Stack<TreeNode> stack = new Stack<>();
 
     public BSTIterator(TreeNode root) {
         TreeNode node = root;
-        dfs(node);
+
+        while(node != null){
+            stack.push(node);
+            node = node.left;
+        }
     }
     
     public int next() {
-        if(!hasNext()) return -1;
-        
         TreeNode curr = stack.pop();
-        dfs(curr.right);
-        
+        TreeNode next = curr.right;
+
+        while(next != null){
+            stack.push(next);
+            next = next.left;
+        }
+
         return curr.val;
     }
     
     public boolean hasNext() {
         return !stack.isEmpty();
-    }
-    
-    private void dfs(TreeNode next){
-        while(next != null){
-            stack.push(next);
-            next = next.left;
-        }
     }
 }
 
