@@ -5,7 +5,7 @@ class Solution {
     */
     public int findLongestChain(int[][] pairs) {
         // 시작점 기준으로 내림차순 정렬
-        Arrays.sort(pairs, (o1, o2) -> Integer.compare(o1[0], o2[0]));
+        //Arrays.sort(pairs, (o1, o2) -> Integer.compare(o1[0], o2[0]));
         // 끝점 기준으로 내림차순 정렬
         Arrays.sort(pairs, (o1, o2) -> Integer.compare(o1[1], o2[1]));
 
