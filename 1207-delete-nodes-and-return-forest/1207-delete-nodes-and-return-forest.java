@@ -15,24 +15,19 @@
  */
 class Solution {
     /*
-        Algorithm & DS: PostOrder
+        Algorithm & DS: PostOrder & HashSet
         Time: O(N), Space: O(M) M = to_delete size
     */
     public TreeNode postOrder(TreeNode node, HashSet<Integer> nodeDelete, List<TreeNode> output){
         if(node == null)
             return node;
 
-        if(node.left != null){
-            node.left = postOrder(node.left, nodeDelete, output);
-        }
-        if(node.right != null){
-            node.right = postOrder(node.right, nodeDelete, output);
-        }
+        node.left = postOrder(node.left, nodeDelete, output);
+        node.right = postOrder(node.right, nodeDelete, output);
 
         if(nodeDelete.contains(node.val)){
             if(node.left != null) output.add(node.left);
             if (node.right != null) output.add(node.right);
-
             return null;
         }
 
