@@ -1,4 +1,8 @@
 class Solution {
+    /*
+        Algorithms & Data Structure: Brute-force
+        Time: O(N^3), Space: O(1)
+    */
     public int findLength(int[] nums1, int[] nums2) {
         int max = 0;
 
