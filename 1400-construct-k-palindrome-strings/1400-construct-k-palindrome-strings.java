@@ -7,14 +7,17 @@ class Solution {
         if(k > s.length()) return false;
 
         int[] alphaCount = new int[26];
-        int oddCount = 0;
 
         for(Character c : s.toCharArray()){
             alphaCount[c - 'a'] += 1;
-            if(alphaCount[c - 'a'] % 2 == 1) oddCount++;
-            else oddCount--;
         }
+        
+        int oddCount = 0;
 
+        for(int count : alphaCount){
+            if(count % 2 == 1) oddCount++;
+        }
+        
         return oddCount <= k;
     }
 }
