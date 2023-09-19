@@ -1,7 +1,7 @@
 class Solution {
     /*
-        Algorithms & Data Structure: Brute-force
-        Time: O(N^3), Space: O(1)
+        Algorithms & Data Structure: DP
+        Time: O(N^2), Space: O(N)
     */
     public int findLength(int[] nums1, int[] nums2) {
         int[][] dp = new int[nums1.length][nums2.length];
