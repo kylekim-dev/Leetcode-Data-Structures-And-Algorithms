@@ -1,33 +1,35 @@
 class Solution {
+    /*
+        Algorithm & DS: HashSet & Iterator
+        Time: O(N^2)
+        Space: O(M)
+    */
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        HashSet<String> check = new HashSet<>();
+        HashSet<String> duplicateChecker = new HashSet<>();
         
+        // 첫번째 값을 기준으로 탐색시작
         for(int i = 0; i < nums.length - 2; i++){
-            HashSet<Integer> set = new HashSet<>();
+            HashSet<Integer> finder = new HashSet<>();
             
             for(int j = i + 1; j < nums.length; j++){
-                int b = (nums[i] + nums[j]) * -1;
+                int c = -(nums[i] + nums[j]); 
                 
-                if(set.contains(b)){
-                    List<Integer> arr = new ArrayList<>();
-                    arr.add(nums[i]);
-                    arr.add(nums[j]);
-                    arr.add(b);
+                if(finder.contains(c)){
+                    List<Integer> arr = Arrays.asList(nums[i], nums[j], c);
                     Collections.sort(arr);
-                    String str = arr.toString();
                     
-                    if(!check.contains(str)){
+                    String key = arr.toString();
+                    
+                    if(!duplicateChecker.contains(key)){
+                       duplicateChecker.add(key);
                        result.add(arr);
-                       check.add(str);
                     }
-                        
                 }
                 
-                set.add(nums[j]);
+                finder.add(nums[j]);
             }
         }
-        
         
         return result;
     }
