@@ -1,36 +1,31 @@
 class Solution {
-    /*
-        Algorithm & DS: HashSet & Iterator
-        Time: O(N^2)
-        Space: O(M)
-    */
+    // Algorithm & DS: Two Pointers
+    // Time: O(n^2), Extra Space: O(1)
+    
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        HashSet<String> duplicateChecker = new HashSet<>();
-        
-        // 첫번째 값을 기준으로 탐색시작
-        for(int i = 0; i < nums.length - 2; i++){
-            HashSet<Integer> finder = new HashSet<>();
-            
-            for(int j = i + 1; j < nums.length; j++){
-                int c = -(nums[i] + nums[j]); 
-                
-                if(finder.contains(c)){
-                    List<Integer> arr = Arrays.asList(nums[i], nums[j], c);
-                    Collections.sort(arr);
-                    
-                    String key = arr.toString();
-                    
-                    if(!duplicateChecker.contains(key)){
-                       duplicateChecker.add(key);
-                       result.add(arr);
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(nums); // O(N*LogN)
+
+        for(int i = 0; i < nums.length; i++){
+            if(i > 0 && nums[i] == nums[i - 1])
+                continue;
+
+            int l = i + 1, r = nums.length - 1;
+
+            while (l < r){
+                int sum = nums[i] + nums[l] + nums[r];
+                if(sum > 0) r--;
+                else if (sum < 0) l++;
+                else {
+                    res.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                    l += 1;
+                    while (nums[l] == nums[l - 1] && l < r){
+                        l++;
                     }
                 }
-                
-                finder.add(nums[j]);
             }
         }
         
-        return result;
+        return res;
     }
 }
