@@ -1,40 +1,36 @@
 class Solution {
     /*
-        [-1,1,0,-3,3]
-        
-        [],[1,2,3,4], i = 0
-        [0]x[2,3,4], i = 1
-        [0,1]x[3,4], i = 2
-        [0,1,2]x[4], i = 3
-        [0,1,2,3][], i = 4
-        
-        min len = 2
-        
-        [-1,1,0,-3,3], total 9
-        0 0 9 
-        
+        // Algorithm & DS: prefixSum
+        // Time: O(n), Extra Space: O(1)
     */
     public int[] productExceptSelf(int[] nums) {
-        // Algorithm && DS: Prefix
-        // Time: O(N), Space: O(1)
-        
-        int total = 1, zeroCount = 0;
+        int[] res = new int[nums.length];
+        int prefixSum = 1;
+        int zeroIdx = -1;
 
         for(int i = 0; i < nums.length; i++){
-            if(nums[i] == 0) zeroCount++;
-            else total *= nums[i];
-        }
-        
-        for(int i = 0; i < nums.length; i++){
-            if(zeroCount >= 1){
-                if(nums[i] == 0 && zeroCount == 1) nums[i] = total; 
-                else nums[i] = 0;
+            if(nums[i] == 0){
+                if (zeroIdx >= 0){
+                    return res;
+                }
+                else {
+                    zeroIdx = i;
+                }
             }
             else {
-                nums[i] = total / nums[i];
+                prefixSum *= nums[i];
             }
         }
-        
-        return nums;
+
+        if(zeroIdx >= 0){
+            res[zeroIdx] = prefixSum;
+        }
+        else {
+            for(int i = 0; i < nums.length; i++){
+                res[i] = prefixSum / nums[i];
+            }
+        }
+
+        return res;
     }
 }
