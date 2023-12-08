@@ -1,29 +1,20 @@
 class Solution {
-    /*
-        x = r - l
-        y = min(h[l], h[r])
-        output = x * y;
-        
-    */
     public int maxArea(int[] height) {
-        // Algorithm: Two Pointer
-        // Time: O(N), Space: O(1)
-        
-        int l = 0, r = height.length - 1;
-        int maxArea = 0;
-        int x, y;
-        
-        // O(N)
-        while (l < r){
-            x = r - l;
-            y = Math.min(height[l], height[r]);
+        // Algorithm & DS: Two Pointer
+        // Time: O(n), Extra Space: O(1)
 
-            maxArea = Math.max(maxArea, x * y);
-            
-            if(y == height[r]) r -= 1;
-            else l += 1;
+        int biggestArea = 0;
+        int l = 0, r = height.length - 1;
+
+        while (l < r) {
+            int area = (r - l) * Math.min(height[l], height[r]);
+
+            biggestArea = Math.max(biggestArea, area);
+
+            if(height[l] <= height[r]) l++;
+            else r--;
         }
         
-        return maxArea;
+        return biggestArea;
     }
 }
