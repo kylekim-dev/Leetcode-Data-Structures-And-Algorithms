@@ -4,12 +4,12 @@ class Solution {
         // Time: O(n), Extra Space: O(1)
         int longest = 0;
         int l = 0, r = 0;
-        int[] arr = new int[128];
+        int[] arr = new int[128 - 32];
 
         Arrays.fill(arr, -1);
 
         while (r < s.length()){
-            int curr = s.charAt(r);
+            int curr = s.charAt(r) - 32;
 
             if(arr[curr] >= 0){
                 if(arr[curr] >= l){
