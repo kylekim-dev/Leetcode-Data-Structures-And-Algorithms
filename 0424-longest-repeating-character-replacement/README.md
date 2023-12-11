@@ -16,7 +16,7 @@
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> Replace the one 'A' in the middle with 'B' and form "AABBBBA".
 The substring "BBBB" has the longest repeating letters, which is 4.
-</pre>
+There may exists other ways to achieve this answer too.</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
