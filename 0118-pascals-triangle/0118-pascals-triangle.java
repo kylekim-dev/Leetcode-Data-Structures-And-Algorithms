@@ -1,5 +1,9 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
+        /*
+            Algorithm & DS: Iterator
+            Time: O(n^2), Extra Space: O(1)
+        */
         List<List<Integer>> res = new ArrayList<>();
         res.add(new ArrayList<>(List.of(1)));
 
