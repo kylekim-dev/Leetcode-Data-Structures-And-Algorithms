@@ -9,20 +9,18 @@ class Solution {
         Deque<Integer> monoQ = new ArrayDeque<>();
 
         for(int i = 0; i < nums.length; i++){
-
             while (!monoQ.isEmpty() && nums[monoQ.getLast()] <= nums[i]){
                monoQ.pollLast();
             }
 
-            while (!monoQ.isEmpty() && monoQ.getFirst() <= i - k){
+            if (!monoQ.isEmpty() && monoQ.getFirst() <= i - k){
                 monoQ.pollFirst();
             }
 
             monoQ.add(i);
 
-            if(j >= 0){
-                res[j] = nums[monoQ.getFirst()];
-            }
+            if(j >= 0) res[j] = nums[monoQ.getFirst()];
+
             j++;
         }
         
