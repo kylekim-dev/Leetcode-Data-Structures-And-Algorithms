@@ -1,23 +1,31 @@
 class Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
-        int[] output = new int[nums.length + 1 - k];
+        /*
+            Algorithms & DS: Monotonic Queue
+            Time: O(N), Extra Space: O(K)
+        */
+        int[] res = new int[nums.length - k + 1];
+        int j = 1 - k;
+        Deque<Integer> monoQ = new ArrayDeque<>();
 
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> Integer.compare(nums[o2], nums[o1]));
-        int l = 0, r = 0;
+        for(int i = 0; i < nums.length; i++){
 
-        while (r < nums.length){
-            maxHeap.offer(r);
-            if(r >= k - 1){
-                while (!maxHeap.isEmpty() && maxHeap.peek() < l){
-                    maxHeap.poll();
-                }
-
-                output[l] = nums[maxHeap.peek()];
-                l++;
+            while (!monoQ.isEmpty() && nums[monoQ.getLast()] <= nums[i]){
+               monoQ.pollLast();
             }
-            r++;
+
+            while (!monoQ.isEmpty() && monoQ.getFirst() <= i - k){
+                monoQ.pollFirst();
+            }
+
+            monoQ.add(i);
+
+            if(j >= 0){
+                res[j] = nums[monoQ.getFirst()];
+            }
+            j++;
         }
         
-        return output;
+        return res;
     }
 }
