@@ -1,5 +1,9 @@
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {
+        /*
+            Algorithms & DS: Monotonic Stack
+            Time: O(N), Space: O(N)
+        */
         int[] answer = new int[temperatures.length];
 
         Stack<Integer> monoStack = new Stack<>(); // 내림차순 모노토닉 스택
