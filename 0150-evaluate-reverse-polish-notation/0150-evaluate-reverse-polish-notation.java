@@ -1,5 +1,9 @@
 class Solution {
     public int evalRPN(String[] tokens) {
+        /*
+            Algorithms & DS: Stack
+            Time: O(N), Extra Space: O(N)
+        */
         Stack<Integer> stack = new Stack<>();
 
         for (String t : tokens) {
