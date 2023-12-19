@@ -7,6 +7,7 @@ class Solution {
             else if(stack.peek() == '(' && c == ')') stack.pop();
             else if(stack.peek() == '[' && c == ']') stack.pop();
             else if(stack.peek() == '{' && c == '}') stack.pop();
+            else if(stack.isEmpty() && (c == ')' || c == ']' || c == '}')) return false;
             else return false;
         }
         
