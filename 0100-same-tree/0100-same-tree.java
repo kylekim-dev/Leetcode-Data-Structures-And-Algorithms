@@ -16,7 +16,7 @@
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         // Algorithm: Pre-Order, Recurssion
-        // Time: O(N), Space: O(N)
+        // Time: O(N), Extra Space: O(1)
         if(p == null && q == null) return true;
         if(p == null || q == null || p.val != q.val) return false;
         
