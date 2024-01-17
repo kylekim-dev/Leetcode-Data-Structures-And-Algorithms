@@ -14,40 +14,14 @@
  * }
  */
 class Solution {
-    public int maxDepth(TreeNode root, int depth){
-        if(root == null) return depth;
+    private int maxDepth(TreeNode node, int depth){
+        if(node == null)
+            return depth - 1;
         
-        return Math.max(maxDepth(root.left, depth + 1), maxDepth(root.right, depth + 1));
+        return Math.max(maxDepth(node.left, depth + 1), maxDepth(node.right, depth + 1));
     }
     
     public int maxDepth(TreeNode root) {
-        // Algorithm: DFS, Recursion 
-        // Time: O(N) Space: O(N)
-        return maxDepth(root, 0);
+        return maxDepth(root, 1);
     }
-    
-    /*public int maxDepth(TreeNode root) {
-        // Algorithm: BFS, Iteration 
-        // Time: O(N) Space: O(N)
-        int level = 0;
-        Queue<TreeNode> q = new ArrayDeque<>();
-        
-        if(root != null) q.add(root);
-        
-        while(!q.isEmpty()){
-            int nodeCount = q.size();
-            while(nodeCount > 0){
-                TreeNode node = q.poll();
-                
-                if(node.left != null) q.add(node.left); 
-                if(node.right != null) q.add(node.right); 
-                
-                nodeCount -= 1;
-            }
-            
-            level += 1;
-        }
-        
-        return level;
-    }*/
 }
