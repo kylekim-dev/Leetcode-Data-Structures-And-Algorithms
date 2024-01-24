@@ -1,18 +1,8 @@
 class Solution {
     public int fib(int n) {
-        // Algorithm: DP Memoization (Bottom-Up)
-        // Time: O(N), Space: O(N)
-        if (n < 2) return n;
+        if(n == 1) return 1;
+        else if(n < 1) return 0;
         
-        int a = 0, b = 1;
-        int temp;
-        
-        for(int i = 2; i <= n; i++){
-            temp = b;
-            b = a + b;
-            a = temp;
-        }
-        
-        return b;
+        return fib(n - 1) + fib(n - 2);
     }
 }
