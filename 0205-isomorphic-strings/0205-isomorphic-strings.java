@@ -5,27 +5,25 @@ class Solution {
          * Time: O(N), Extra Space: O(M)
          */
 
-         if(s.length() != t.length()){
-            return false;
-         }
-
-         int[] m1 = new int[133];
-         int[] m2 = new int[133];
+        int[] map1 = new int[128];
+        int[] map2 = new int[128];
 
         for(int i = 0; i < s.length(); i++){
-            int x = s.charAt(i), y = t.charAt(i);
-            
-            if(m1[x] == 0){
-                m1[x] = y;
+            int s1 = s.charAt(i), t1 = t.charAt(i);
+
+            if(map1[s1] == 0){
+                map1[s1] = t1;
             }
-            else if(m1[x] != y){
+
+            if(map1[s1] != t1){
                 return false;
             }
-            
-            if(m2[y] == 0){
-                m2[y] = x;
+
+            if(map2[t1] == 0){
+                map2[t1] = s1;
             }
-            else if(m2[y] != x){
+
+            if(map2[t1] != s1){
                 return false;
             }
         }
