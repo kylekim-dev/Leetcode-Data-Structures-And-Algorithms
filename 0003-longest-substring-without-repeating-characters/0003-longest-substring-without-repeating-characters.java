@@ -1,28 +1,27 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        // Algorithm & DS: Sliding Window
-        // Time: O(n), Extra Space: O(1)
-        int longest = 0;
-        int l = 0, r = 0;
-        int[] arr = new int[128];
+        /*
+            Algorithms & HashMap
+            Time: O(N), Extra Space: O(N)
+         */
 
-        Arrays.fill(arr, -1);
+        boolean[] map = new boolean[128];
+        int answer = 0;
+        int l = 0, r = 0;
 
         while (r < s.length()){
-            int curr = s.charAt(r);
+            if(map[s.charAt(r)]){
 
-            if(arr[curr] >= 0){
-                if(arr[curr] >= l){
-                    l = arr[curr] + 1;
-                }
+                while (map[s.charAt(r)])
+                    map[s.charAt(l++)] = false;
             }
 
-            longest = Math.max(longest, r - l + 1);
-            arr[curr] = r;
+            map[s.charAt(r)] = true;
+            answer = Math.max(answer, r - l + 1);
 
             r++;
         }
         
-        return longest;
+        return answer;
     }
 }
