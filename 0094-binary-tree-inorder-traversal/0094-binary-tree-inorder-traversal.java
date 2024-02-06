@@ -15,32 +15,24 @@
  */
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
-        // Algorithm: Inorder Traversal && Iterator
-        // Time: O(N), Space: O(N)
+        /*
+            Algorithms & DS: Recursive
+            Time: O(N), Extra Space: O(1)
+         */
+        List<Integer> answer = new ArrayList<>();
+
+        inorder(root, answer);
         
-        Stack<TreeNode> stack = new Stack<>();
-        List<Integer> nums = new ArrayList<>();
-        if(root != null)
-            stack.push(root);
-        
-        while(!stack.isEmpty()){
-            TreeNode node = stack.peek();
-            
-            if(node.left != null && node.left.val != Integer.MIN_VALUE){
-                stack.push(node.left);
-                continue;
-            }
-            
-            nums.add(node.val);
-            node.val = Integer.MIN_VALUE;
-            stack.pop();
-            
-            if(node.right != null && node.right.val != Integer.MIN_VALUE){
-                stack.push(node.right);
-            }
-        }
-        
-        
-        return nums;
+        return answer;
+    }
+    
+
+    private void inorder(TreeNode node, List<Integer> answer){
+        if(node == null)
+            return;
+
+        inorder(node.left, answer);
+        answer.add(node.val);
+        inorder(node.right, answer);
     }
 }
