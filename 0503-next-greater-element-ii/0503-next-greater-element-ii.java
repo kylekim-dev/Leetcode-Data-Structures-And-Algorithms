@@ -1,23 +1,24 @@
 class Solution {
     public int[] nextGreaterElements(int[] nums) {
         /*
-            Algorithms & DS: Monotonic stack
+            Algorithms & DS: Stack
             Time: O(N), Extra Space: O(N)
-        */
-        Stack<Integer> monoStack = new Stack<>(); 
-        int[] output = new int[nums.length];
+         */
 
-        Arrays.fill(output, -1);
-        for(int c = 0; c < 2; c++){
-            for(int i = 0; i < nums.length; i++){
-                while(!monoStack.isEmpty() && nums[monoStack.peek()] < nums[i]){
-                    output[monoStack.pop()] = nums[i];
-                }
+        int n = nums.length;
+        int[] answer = new int[n];
+        Stack<Integer> stack = new Stack<>();
 
-                monoStack.push(i);
+        Arrays.fill(answer, -1);
+
+        for(int i = 0; i < n * 2; i++){
+            while (!stack.isEmpty() && nums[stack.peek()] < nums[i % n]){
+                answer[stack.pop()] = nums[i % n];
             }
-        }
 
-        return output;
+            stack.push(i % n);
+        }
+        
+        return answer;
     }
 }
