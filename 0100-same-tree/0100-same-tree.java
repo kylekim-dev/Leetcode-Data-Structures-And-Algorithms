@@ -15,7 +15,10 @@
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-
+        /*
+            Algorithms & DS: Recursive Traversal
+            Time: O(N), Extra Space: O(N)
+        */
         if(p == null && q == null) return true;
         else if(p == null || q == null || p.val != q.val) return false;
         
