@@ -7,18 +7,19 @@ class Solution {
         int m = grid.length, n = grid[0].length;
         int maxArea = 0;
         int[] dr = {-1, 0, 1, 0}, dc = {0, 1, 0, -1};
+        int div = 100;
         
         for(int r = 0; r < m; r++){
             for(int c = 0; c < n; c++){
                 if(grid[r][c] == 1){
-                    Stack<Integer> stack = new Stack<>();
+                    Queue<Integer> q = new LinkedList<>();
                     int area = 0;
-                    
-                    stack.push(r * 100 + c);
-                    
-                    while(!stack.isEmpty()){
-                        int coordinate = stack.pop();
-                        int currCol = coordinate % 100, currRow = coordinate / 100;
+
+                    q.offer(r * div + c);
+
+                    while(!q.isEmpty()){
+                        int coordinate = q.poll();
+                        int currRow = coordinate / div, currCol = coordinate % div;
                         if(grid[currRow][currCol] == 0){
                             continue;
                         }
@@ -32,7 +33,7 @@ class Solution {
                                 continue;
                             }
 
-                            stack.push(nextRow * 100 + nextCol);
+                            q.offer(nextRow * div + nextCol);
                         }
                     }
 
