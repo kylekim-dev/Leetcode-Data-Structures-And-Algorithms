@@ -1,7 +1,7 @@
 class Solution {
     public int maxAreaOfIsland(int[][] grid) {
         /*
-            Algorithms & DS: #DFS, #Stack
+            Algorithms & DS: #BFS, #Stack
             Time: O(N*M), Extra Space: O(N * M)
         */
         int m = grid.length, n = grid[0].length;
