@@ -15,34 +15,36 @@
  */
 class Solution {
     public int maxLevelSum(TreeNode root) {
-        // Algorithm & DS: Queue, BFS
-        // Time: O(N), Space: O(N)
-        
-        Queue<TreeNode> q = new ArrayDeque<>();
+        /*
+            Algorithms & DS: #BFS, #Queue
+            Time: O(N), Extra Space: O(1)
+         */
+
+        Queue<TreeNode> q = new LinkedList<>();
+        int max = Integer.MIN_VALUE, maxLevel = -1;
         int level = 1;
-        int localLevel = 1;
-        int sum = Integer.MIN_VALUE;
-        q.add(root);
         
-        while(!q.isEmpty()){
+        q.offer(root);
+
+        while (!q.isEmpty()){
+            int sum = 0;
             int size = q.size();
-            int localSum = 0;
-            
+
             for(int i = 0; i < size; i++){
                 TreeNode node = q.poll();
-                localSum += node.val;
-                if(node.left != null) q.add(node.left);
-                if(node.right != null) q.add(node.right);
+                if(node.left != null) q.offer(node.left);
+                if(node.right != null) q.offer(node.right);
+
+                sum += node.val;
             }
-            
-            if(localSum > sum) {
-                sum = localSum;
-                level = localLevel;
+
+            if(sum > max){
+                max = sum;
+                maxLevel = level;
             }
-            
-            localLevel++;
+            level++;
         }
         
-        return level;
+        return maxLevel;
     }
 }
