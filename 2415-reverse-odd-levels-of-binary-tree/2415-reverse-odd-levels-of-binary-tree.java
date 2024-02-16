@@ -14,23 +14,47 @@
  * }
  */
 class Solution {
+    /*
+        [0,1,2,0,0,0,0,1,2,3,4,5,6,7,7]
+        [0,2,1,0,0,0,0,7,7,6,5,4,3,2,1]
+    */
     public TreeNode reverseOddLevels(TreeNode root) {
-        // We call the function from lvl 0, and everything starts from lvl 1
-        traverse(root.left, root.right, 1);
+        /*
+            Algorithms & DS: #BFS, #Queue
+            Time: O(N), Extra Space: O(N)
+         */
+
+        Queue<TreeNode> q = new LinkedList<>();
+        int level = 0;
+        q.offer(root);
+
+        while (!q.isEmpty()){
+            int size = q.size();
+
+            Stack<TreeNode> stack = new Stack<>();
+
+            for(int i = 0; i < size; i++){
+                TreeNode rightNode = q.poll();
+
+                if(rightNode.left != null) q.offer(rightNode.left);
+                if(rightNode.right != null) q.offer(rightNode.right);
+
+                // Odd level
+                if(level % 2 == 1){
+                    if(i < size / 2){
+                        stack.push(rightNode);
+                    }
+                    else {
+                        TreeNode leftNode = stack.pop();
+                        int temp = rightNode.val;
+                        rightNode.val = leftNode.val;
+                        leftNode.val = temp;
+                    }
+                }
+            }
+            level++;
+        }
+
         return root;
-    }
-
-    public void traverse(TreeNode node1, TreeNode node2, int lvl) {
-        if (node1 == null || node2 == null) {
-            return;
-        }
-        if (lvl % 2 == 1){
-            int temp = node1.val;
-            node1.val = node2.val;
-            node2.val = temp;
-        }
-
-        traverse(node1.left, node2.right, lvl + 1);
-        traverse(node1.right, node2.left, lvl + 1);
     }
 }
