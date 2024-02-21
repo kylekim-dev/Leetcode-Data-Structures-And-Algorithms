@@ -1,5 +1,5 @@
 class Solution {
-    // Algorithm & DS: Queue
+    // Algorithm & DS: Iterative
     // Time: O(n + m), Extra Space: O(1)
     
     public void merge(int[] nums1, int m, int[] nums2, int n) {
