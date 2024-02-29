@@ -4,7 +4,6 @@ class Solution {
          * Algorithms & DS: #Sliding Window
          * Time: O(N), Extra Space: O(1)
          */
-
         int[] alphabetCount = new int[26];
         int max = 0;
         int l = 0, r = 0;
