@@ -1,32 +1,26 @@
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
-        final int INF = Integer.MAX_VALUE;
-        int[] accArray = new int[nums.length + 1];
-        int accSum = 0;
-        int result = INF;
-        int left, right;
+        /*
+         * Algorithms & DS: #Sliding Window
+         * Time: O(N), Extra Space: O(1)
+         */
+        int ans = Integer.MAX_VALUE;
+        int l = 0, r = 0;
+        int sum = 0;
 
-        for(int i = 1; i < accArray.length; i++){
-            accSum += nums[i - 1];
-            accArray[i] += accSum;
-        }
-
-        accSum = 0;
-        left = 0;
-        right = 1;
-
-        while (right < accArray.length) {
-            accSum = accArray[right] - accArray[left];
-
-            if(accSum < target){
-                right++;
+        while (r < nums.length || sum >= target) {
+            if(sum >= target){
+                ans = Math.min(ans, r - l);
+                sum -= nums[l++];
             }
-            else if(accSum >= target){
-                result = Math.min(result, right - left);
-                left++;
+            else {
+                sum += nums[r++];
             }
         }
 
-        return result == INF ? 0 : result;
+        if(ans == Integer.MAX_VALUE)
+            ans = 0;
+
+        return ans;
     }
 }
