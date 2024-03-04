@@ -9,9 +9,11 @@ class Solution {
 
         List<Integer> ans = new ArrayList<>();
         HashMap<Character, Integer> map = new HashMap<>();
+        int bal = 0;
 
         for (Character c : p.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
+            bal++;
         }
 
         int l = 0, r = 0;
@@ -20,6 +22,9 @@ class Solution {
             Character rightAlpha = s.charAt(r);
             if(map.containsKey(rightAlpha)){
                 map.put(rightAlpha, map.get(rightAlpha) - 1);
+                if(map.get(rightAlpha) >= 0){
+                    bal--;
+                }
             }
                 
             if(r >= p.length()){
@@ -27,20 +32,14 @@ class Solution {
 
                 if(map.containsKey(leftAlpha)){
                     map.put(leftAlpha, map.get(leftAlpha) + 1);
+                    if(map.get(leftAlpha) > 0){
+                        bal++;
+                    }
                 }
                 l++;
             }
 
-            boolean isAnagram = true;
-
-            for(Integer val : map.values()){
-                if(val > 0){
-                    isAnagram = false;
-                    break;
-                }
-            }
-
-            if(isAnagram){
+            if(bal == 0){
                 ans.add(l);
             }
 
