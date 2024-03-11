@@ -10,12 +10,8 @@ class Solution {
 
         for(char c : s.toCharArray()){
             if(c == ')'){
-                if(bal > 0){
-                    bal--;
-                }
-                else {
-                    ans++;
-                }
+                if(bal > 0) bal--;
+                else ans++;
             }
             else {
                 bal++;
