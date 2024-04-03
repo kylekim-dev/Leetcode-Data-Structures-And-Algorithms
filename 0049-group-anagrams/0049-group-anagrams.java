@@ -1,22 +1,19 @@
 class Solution {
+    // Time: O(N*M) < 10^6, Space: O(N)
     public List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String, List<String>> map = new HashMap<>();
-        List<List<String>> result = new ArrayList<>();
+        
+        for (String s : strs) { // O(N), N < 10^4
+            int[] alpha = new int[26];
 
-        for(int i = 0; i < strs.length; i++){
-            String val = strs[i];
-            char[] sorted = val.toCharArray();
-            Arrays.sort(sorted);
-            String key = new String(sorted);
+            for (char c : s.toCharArray()) alpha[c - 'a'] += 1; // O(M) M < 100
+            String key = Arrays.toString(alpha);
 
             if(!map.containsKey(key)) map.put(key, new ArrayList<>());
-            map.get(key).add(val);
+
+            map.get(key).add(s);
         }
 
-        for(String key : map.keySet()){
-            result.add(map.get(key));
-        }
-
-        return result;
+        return new ArrayList<>(map.values());
     }
 }
