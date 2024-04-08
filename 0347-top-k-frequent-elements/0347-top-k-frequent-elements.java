@@ -1,5 +1,9 @@
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
+        /*
+            Algorithms & DS: Hashmap & Priority Queue
+            Time: O(N*LogN), Space: O(N)
+        */
         Map<Integer, Integer> countMap = new HashMap<>();
 
         for(int n : nums){
