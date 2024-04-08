@@ -1,27 +1,47 @@
 class Solution {
     public int[] topKFrequent(int[] nums, int k) {
         /*
-            Algorithms & DS: Hashmap & Priority Queue
-            Time: O(N*LogN), Space: O(N)
-        */
-        Map<Integer, Integer> countMap = new HashMap<>();
+            Algorithms & DS: #Hashing
+            Time: O(N), Space: O(N)
+         */
 
-        for(int n : nums){
-            countMap.put(n, countMap.getOrDefault(n, 0) + 1);
-        }
+        HashMap<Integer, Integer> count = new HashMap<>();
+        HashMap<Integer, Integer> rank = new HashMap<>();
+        int[] ans = new int[k];
 
-        PriorityQueue<Integer> pq = new PriorityQueue<>((o1, o2) -> countMap.get(o2).compareTo(countMap.get(o1)));
+        for(int num : nums){
+            if(!rank.containsKey(num)){
+                int initRank = rank.size();
+                rank.put(num, initRank);
 
-        for (Integer  n : countMap.keySet()){
-            pq.offer(n);
-        }
+                if(initRank < k){
+                    ans[initRank] = num;
+                }
+            }
 
-        int[] res = new int[k];
+            count.put(num, count.getOrDefault(num, 0) + 1);
 
-        for(int i = 0; i < k; i++){
-            res[i] = pq.poll();
+            int currRank = rank.get(num);
+            int currCount = count.get(num);
+            int betterRank = Math.min(k - 1, currRank - 1);
+
+            while (betterRank > -1 && count.get(ans[betterRank]) < currCount){
+                int nextNum = ans[betterRank];
+                rank.put(nextNum, currRank);
+                rank.put(num, betterRank);
+
+                // swap rank
+                ans[betterRank] = num;
+
+                if(currRank < k){
+                    ans[currRank] = nextNum;
+                }
+
+                currRank = betterRank;
+                betterRank = currRank - 1;
+            }
         }
         
-        return res;
+        return ans;
     }
 }
