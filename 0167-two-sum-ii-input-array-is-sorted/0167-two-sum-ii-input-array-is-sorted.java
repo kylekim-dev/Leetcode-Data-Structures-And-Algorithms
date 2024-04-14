@@ -10,10 +10,10 @@ class Solution {
                 r--;
             }
             else {
-                return new int[]{l + 1, r + 1};
+                break;
             }
         }
         
-        return new int[]{-1, -1};
+        return new int[]{l + 1, r + 1};
     }
 }
