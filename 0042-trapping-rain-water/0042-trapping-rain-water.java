@@ -1,34 +1,28 @@
 class Solution {
     public int trap(int[] height) {
-        // Algorithm & DS: Monotonic Stack
-        // Time: O(n), Extra Space: O(n)
+        /*
+            Algorithms & DS: #Two Pointer
+            Time: O(N), Space: O(1)
+         */
+        int[] leftMax = new int[height.length];
+        int[] rightMax = new int[height.length];
+        int ans = 0;
+        int r = height.length - 1;
 
-        Stack<Integer> monoStack = new Stack<>();
-        int area = 0;
-
-        for(int r = 0; r < height.length; r++){
-            int prevMaxHeight = 0;
-
-            while (!monoStack.isEmpty() && height[monoStack.peek()] <= height[r]){
-                int l = monoStack.pop();
-                int x = r - l - 1;
-                int y = Math.min(height[l], height[r]);
-
-                area += x * (y - prevMaxHeight);
-
-                prevMaxHeight = height[l];
-            }
-
-            if(!monoStack.isEmpty()){
-                int l = monoStack.peek();
-                int x = r - l - 1;
-                int y = Math.min(height[l], height[r]);
-                area += x * (y - prevMaxHeight);
-            }
-
-            monoStack.push(r);
+        leftMax[0] = height[0];
+        rightMax[r] = height[r];
+        
+        for(int l = 1; l < height.length; l++){
+            r -= 1;
+            leftMax[l] = Math.max(leftMax[l - 1], height[l]);
+            rightMax[r] = Math.max(rightMax[r + 1], height[r]);
         }
         
-        return area;
+        
+        for(int i = 0; i < height.length; i++){
+            ans += Math.min(leftMax[i], rightMax[i]) - height[i];
+        }
+        
+        return ans;
     }
 }
