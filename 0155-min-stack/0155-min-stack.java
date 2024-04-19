@@ -1,34 +1,34 @@
 class MinStack {
     /*
         Algorithms & DS: Stack
-        Time: O(N), Extra Space: O(N)
+        Time: O(1), Extra Space: O(N)
      */
-    private Stack<Integer> _minStack;
-    private Stack<Integer> _stack;
+    Stack<Integer> stack;
+    Stack<Integer> minStack;
 
     public MinStack() {
-        _minStack = new Stack<>();
-        _stack = new Stack<>();
+        stack = new Stack<>();
+        minStack = new Stack<>();
     }
-    
-    public void push(int val) {
-        _stack.push(val);
 
-        if(!_minStack.isEmpty() && _minStack.peek() <= val) _minStack.push(_minStack.peek());
-        else _minStack.push(val);
+    public void push(int val) {
+        if(minStack.isEmpty() || minStack.peek() > val) minStack.push(val);
+        else minStack.push(minStack.peek());
+
+        stack.push(val);
     }
-    
+
     public void pop() {
-        _minStack.pop();
-        _stack.pop();
+        stack.pop();
+        minStack.pop();
     }
-    
+
     public int top() {
-        return _stack.peek();
+        return stack.peek();
     }
-    
+
     public int getMin() {
-        return _minStack.peek();
+        return minStack.peek();
     }
 }
 
