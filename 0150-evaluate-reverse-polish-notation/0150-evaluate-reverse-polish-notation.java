@@ -5,9 +5,11 @@ class Solution {
             Time: O(N), Extra Space: O(N)
         */
         Stack<Integer> stack = new Stack<>();
+        String[] operands = {"+", "-", "*", "/"};
+        HashSet<String> operandSet = new HashSet<>(Arrays.asList(operands));
 
         for (String t : tokens) {
-            if(t.equals("+") || t.equals("-") || t.equals("*") || t.equals("/")){
+            if(operandSet.contains(t)){
                 int b = stack.pop();
                 int a = stack.pop();
 
