@@ -1,50 +1,41 @@
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
-        int count = 0;
+        /*
+            Algorithms & DS: #Sliding Window, #HashMap
+            Time: O(N), Space: O(N)
+         */
+
+        int l = 0, r = 0;
+        int bal = s1.length();
         HashMap<Character, Integer> map = new HashMap<>();
 
         for(Character c : s1.toCharArray()){
             map.put(c, map.getOrDefault(c, 0) + 1);
-            count++;
         }
-
-        int l = 0, r = 0;
 
         while (r < s2.length()){
-            char rightChar = s2.charAt(r);
+            Character rChar = s2.charAt(r);
 
-            if(map.containsKey(rightChar)){
-                map.put(rightChar, map.get(rightChar) - 1);
-                count--;
+            if(map.containsKey(rChar)){
+                map.put(rChar, map.get(rChar) - 1);
+                bal--;
             }
 
-            if(!map.containsKey(rightChar)) {
-                while (l <= r){
-                    char leftChar = s2.charAt(l);
-                    if(map.containsKey(leftChar)){
-                        map.put(leftChar, map.get(leftChar) + 1);
-                        count++;
-                    }
-                    l++;
+            while (l < r && (r - l >= s1.length() || map.getOrDefault(rChar, 0) < 0)){
+                Character lChar = s2.charAt(l);
+                if(map.containsKey(lChar)){
+                    map.put(lChar, map.get(lChar) + 1);
+                    bal++;
                 }
-            }
-            else if(map.get(rightChar) < 0){
-                while (l <= r && map.get(rightChar) < 0){
-                    char leftChar = s2.charAt(l);
-                    if(map.containsKey(leftChar)){
-                        map.put(leftChar, map.get(leftChar) + 1);
-                        count++;
-                    }
-                    l++;
-                }
+                l++;
             }
 
-            if(count == 0){
+            if(bal == 0){
                 return true;
             }
+
             r++;
         }
-
         
         return false;
     }
