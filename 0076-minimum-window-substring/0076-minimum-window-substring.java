@@ -1,52 +1,59 @@
 class Solution {
     public String minWindow(String s, String t) {
         /*
-            Algorithms & DS: Queue, HashMap
-            Time: O(N), Extra Space: O(M)
+            Algorithms & DS: #Sliding Window, #Queue
+            Time: O(N), Space: O(N)
          */
 
         if(s.length() < t.length()){
             return "";
         }
-        
-        Queue<Integer> q = new LinkedList<>();
+
+        int[] ansIndex = {-1, s.length()};
+        int l = 0,r = 0;
+        int bal = 0;
         HashMap<Character, Integer> map = new HashMap<>();
-        int l = 0, r = s.length();
+        Queue<Integer> q = new ArrayDeque<>();
 
         for(Character c : t.toCharArray()){
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        int bal = map.size();
-
-        for(int i = 0; i < s.length(); i++){
-            Character curr = s.charAt(i);
+        while (r < s.length()){
+            Character curr = s.charAt(r);
 
             if(map.containsKey(curr)){
-                q.offer(i);
                 map.put(curr, map.get(curr) - 1);
-
                 if(map.get(curr) == 0){
-                    bal -= 1;
+                    bal++;
                 }
 
-                while (!q.isEmpty() && bal <= 0){
-                    int j = q.poll();
-                    Character leftChar = s.charAt(j);
-                    map.put(leftChar, map.get(leftChar) + 1);
+                q.offer(r);
+            }
 
-                    if(bal == 0 && r - l > i - j){
-                        l = j;
-                        r = i;
-                    }
+            while (!q.isEmpty() && bal == map.size()){
+                l = q.poll();
 
-                    if(map.get(leftChar) == 1){
-                        bal += 1;
-                    }
+                if(ansIndex[1] - ansIndex[0] > r - l){
+                    ansIndex[0] = l;
+                    ansIndex[1] = r;
+                }
+
+                map.put(s.charAt(l), map.get(s.charAt(l)) + 1);
+
+                if(map.get(s.charAt(l)) == 1){
+                    bal--;
                 }
             }
-        }
 
-        return r < s.length() ?  s.substring(l, r + 1) : "";
+            r++;
+        }
+        
+        if(ansIndex[0] < 0){
+            return "";
+        }
+        
+        return s.substring(ansIndex[0], ansIndex[1] + 1);
+        
     }
 }
