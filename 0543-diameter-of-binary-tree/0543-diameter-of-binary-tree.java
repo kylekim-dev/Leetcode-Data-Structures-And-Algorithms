@@ -17,17 +17,21 @@ class Solution {
     int longest = 0;
     
     public int diameterOfBinaryTree(TreeNode root) {
-        recur(root);
+        /*
+            Algorithms & DS: PostOrder Traversal
+            Time: O(N), Space: O(N)
+        */
+        postOrder(root);
         
         return longest;
     }
     
-    public int recur(TreeNode root){
+    public int postOrder(TreeNode root){
         if(root == null)
             return 0;
         
-        int leftMax = recur(root.left);
-        int rightMax = recur(root.right);
+        int leftMax = postOrder(root.left);
+        int rightMax = postOrder(root.right);
         
         longest = Math.max(longest, leftMax + rightMax);
         
