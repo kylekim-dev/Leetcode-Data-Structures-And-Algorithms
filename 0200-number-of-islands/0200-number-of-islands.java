@@ -1,28 +1,33 @@
 class Solution {
-    void dfs(char[][] grid, int x, int y){
-        if (x < 0 || y < 0 || y >= grid.length || x >= grid[y].length || grid[y][x] == '0')
-            return;
-        
-        grid[y][x] = '0';
-        
-        dfs(grid, x, y - 1);
-        dfs(grid, x, y + 1);
-        dfs(grid, x - 1, y);
-        dfs(grid, x + 1, y);
-    }
+    final int[] DR = {0, 1, 0, -1};
+    final int[] DC = {1, 0, -1, 0};
     
     public int numIslands(char[][] grid) {
-        int count = 0;
+        int islands = 0;
         
-        for(int y = 0; y < grid.length; y++){
-            for(int x = 0; x < grid[y].length; x++){
-                if(grid[y][x] == '1'){
-                    dfs(grid, x, y);
-                    count += 1;
+        for(int r = 0; r < grid.length; r++){
+            for(int c = 0; c < grid[r].length; c++){
+                if(grid[r][c] == '1'){                    
+                    islands += 1;
+                    grid[r][c] = '0';
+                    dfs(grid, r, c);
                 }
             }
         }
         
-        return count;
+        return islands;
+    }
+    
+    public void dfs(char[][] grid, int r, int c){
+        for(int i = 0; i < DR.length; i++){
+            int nextR = r + DR[i];
+            int nextC = c + DC[i];
+            
+            if(nextR < 0 || nextR >= grid.length || nextC < 0 || nextC >= grid[nextR].length || grid[nextR][nextC] == '0'){
+                continue;
+            }
+            grid[nextR][nextC] = '0';
+            dfs(grid, nextR, nextC);
+        }
     }
 }
