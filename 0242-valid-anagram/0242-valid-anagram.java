@@ -1,9 +1,31 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        int[] alphabet = new int[26];
-        for (int i = 0; i < s.length(); i++) alphabet[s.charAt(i) - 'a'] += 1;
-        for (int i = 0; i < t.length(); i++) alphabet[t.charAt(i) - 'a'] -= 1;
-        for (int i : alphabet) if (i != 0) return false;
-        return true;
+        /*
+         * Algorithms & Data Structure: HashSet
+         * Time Complexity:  O(N)
+         * Space Complexity: O(1) = 26
+         */
+
+         int[] map = new int[27];
+
+         for(char c : s.toCharArray()){
+            map[c - 'a'] += 1;
+         }
+
+         for(char c : t.toCharArray()){
+            map[c - 'a'] -= 1;
+
+            if(map[c - 'a'] < 0){
+                return false;
+            }
+         }
+
+         for(int val : map){
+            if(val > 0){
+                return false;
+            }
+         }
+
+         return true;
     }
 }
